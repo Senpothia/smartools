@@ -25,7 +25,8 @@ public class Initializer {
         progProperpies.load(reader);
 
         String programmerDirectory = progProperpies.getProperty("programmerDirectory");
-        String binaryLocations = progProperpies.getProperty("binaryLocations");
+        String binaryLocations1 = progProperpies.getProperty("binaryLocations1");
+        String binaryLocations2 = progProperpies.getProperty("binaryLocations2");
         String varEnv = progProperpies.getProperty("varEnv");
         String productNames = progProperpies.getProperty("productNames");
         String voies = progProperpies.getProperty("voies");
@@ -41,8 +42,8 @@ public class Initializer {
         String single = progProperpies.getProperty("single");
         String adresses1 = progProperpies.getProperty("adresses1");
         String adresses2 = progProperpies.getProperty("adresses2");
-       
-        Initialisation init = new Initialisation(programmerDirectory, varEnv, binaryLocations, binaryLocations, item, item, productNames, voies, commutateur, device1, device2, adresses1, adresses2, programmer, matrice, autoConnection, item, cycles, timing, single);
+
+        Initialisation init = new Initialisation(programmerDirectory, varEnv, binaryLocations1, binaryLocations2, item, item, productNames, voies, commutateur, device1, device2, adresses1, adresses2, programmer, matrice, autoConnection, item, cycles, timing, single);
 
         return init;
     }

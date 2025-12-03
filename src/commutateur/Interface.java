@@ -3893,10 +3893,10 @@ public class Interface extends javax.swing.JFrame implements Observer {
         //Recherche nombre de voie du commutateur
         if (initialisation.getCommutateur().equals("na")) {
 
-            //System.out.println("Commutateur = " + initialisation.getCommutateur());
+            System.out.println("Commutateur = " + initialisation.getCommutateur());
         } else {
 
-            //System.out.println("Commutateur = " + initialisation.getCommutateur());
+            System.out.println("Commutateur = " + initialisation.getCommutateur());
             nombreVoiesCommutateurParamsProperties = initialisation.getCommutateur();
             limCommutateur = Integer.parseInt(nombreVoiesCommutateurParamsProperties);
         }
@@ -3904,10 +3904,10 @@ public class Interface extends javax.swing.JFrame implements Observer {
         // Recherche du fichier binaire microcontrôleur1
         if (initialisation.getBinaryLocations1().equals("na")) {
 
-            //System.out.println("BinaryLocation = " + initialisation.getBinaryLocations());
+            System.out.println("BinaryLocation = " + initialisation.getBinaryLocations1());
         } else {
 
-            //System.out.println("BinaryLocation = " + initialisation.getBinaryLocations());
+            System.out.println("BinaryLocation = " + initialisation.getBinaryLocations1());
             hexLocations1ParamsProperties = initialisation.getBinaryLocations1();
 
         }
@@ -3915,10 +3915,10 @@ public class Interface extends javax.swing.JFrame implements Observer {
         // Recherche du fichier binaire microcontrôleur2
         if (initialisation.getBinaryLocations2().equals("na")) {
 
-            //System.out.println("BinaryLocation = " + initialisation.getBinaryLocations());
+            System.out.println("BinaryLocation = " + initialisation.getBinaryLocations2());
         } else {
 
-            //System.out.println("BinaryLocation = " + initialisation.getBinaryLocations());
+            System.out.println("BinaryLocation = " + initialisation.getBinaryLocations2());
             hexLocations2ParamsProperties = initialisation.getBinaryLocations2();
 
         }
