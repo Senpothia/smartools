@@ -330,7 +330,7 @@ public class Connecteur extends Observable {
 
             //tempo(10000);  // pour tests
             //System.out.println("Début programmation");
-            cleanDirectory(programmerPathTempDir);
+            //cleanDirectory(programmerPathTempDir);
             cleanDirectory2(".\\logs\\logs.txt");
             tempo(Constants.TIMING);  // valeur initiale = 250
             programmationCompleted("->START:99:" + i);

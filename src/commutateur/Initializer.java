@@ -39,22 +39,10 @@ public class Initializer {
         String cycles = progProperpies.getProperty("cycles");
         String timing = progProperpies.getProperty("timing");
         String single = progProperpies.getProperty("single");
-        String adresse1Device1 = progProperpies.getProperty("adresse1Device1");
-        String adresse2Device1 = progProperpies.getProperty("adresse2Device1");
-        String adresse3Device1 = progProperpies.getProperty("adresse3Device1");
-        String adresse4Device1 = progProperpies.getProperty("adresse4Device1");
-        String adresse5Device1 = progProperpies.getProperty("adresse5Device1");
-        String adresse6Device1 = progProperpies.getProperty("adresse6Device1");
-        String adresse7Device1 = progProperpies.getProperty("adresse7Device1");
-        String adresse1Device2 = progProperpies.getProperty("adresse1Device1");
-        String adresse2Device2 = progProperpies.getProperty("adresse2Device2");
-        String adresse3Device2 = progProperpies.getProperty("adresse3Device2");
-        String adresse4Device2 = progProperpies.getProperty("adresse4Device2");
-        String adresse5Device2 = progProperpies.getProperty("adresse5Device2");
-        String adresse6Device2 = progProperpies.getProperty("adresse6Device2");
-        String adresse7Device2 = progProperpies.getProperty("adresse7Device2");
-
-        Initialisation init = new Initialisation(programmerDirectory, varEnv, binaryLocations, binaryLocations, productNames, voies, commutateur, device1, device2, adresse1Device1, adresse2Device1, adresse3Device1, adresse4Device1, adresse5Device1, adresse6Device1, adresse7Device1, adresse1Device2, adresse2Device2, adresse3Device2, adresse4Device2, adresse5Device2, adresse6Device2, adresse7Device2, programmer, matrice, autoConnection, item, cycles, timing, single);
+        String adresses1 = progProperpies.getProperty("adresses1");
+        String adresses2 = progProperpies.getProperty("adresses2");
+       
+        Initialisation init = new Initialisation(programmerDirectory, varEnv, binaryLocations, binaryLocations, item, item, productNames, voies, commutateur, device1, device2, adresses1, adresses2, programmer, matrice, autoConnection, item, cycles, timing, single);
 
         return init;
     }

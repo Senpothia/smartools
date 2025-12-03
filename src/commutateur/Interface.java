@@ -42,8 +42,10 @@ public class Interface extends javax.swing.JFrame implements Observer {
     private String nomNouveauBinaire = null;
     private String devicesParamsProperties = null;               // devices lus dans params.properties
     private String nouveauDevice = null;         // device créé et ajouté à la liste
-    private String deviceEnTest = null;          // microcontroleur à programmer sur le produits sélectionné
-    private String hexLocationsParamsProperties = null;          // liste lues dans params.properties
+    private String deviceEnTest1 = null;          // microcontroleur1 à programmer sur le produits sélectionné
+    private String deviceEnTest2 = null;          // microcontroleur2 à programmer sur le produits sélectionné
+    private String hexLocations1ParamsProperties = null;          // fichier binaire 1 extrait de params.properties
+    private String hexLocations2ParamsProperties = null;          // fichier binaire 2 extrait de params.properties
     private String binaireLocation = null;
     private String nombreVoiesCommutateurParamsProperties = null;  // nombre de voies du commutateur lues dans params.properties
     private String programmerParamsProperties = null;
@@ -74,6 +76,8 @@ public class Interface extends javax.swing.JFrame implements Observer {
     private ArrayList<String> listesProduits = new ArrayList<String>();
     private ArrayList<String> listesVoies = new ArrayList<String>();
     private ArrayList<String> listesMatrices = new ArrayList<String>();
+    private ArrayList<String> listesAdresses1 = new ArrayList<String>();
+    private ArrayList<String> listesAdresses2 = new ArrayList<String>();
 
     private ArrayList<String> ListeBinairesEnregistres = new ArrayList<String>();
     private ArrayList<String> listeDevicesEnregistres = new ArrayList<String>();
@@ -485,7 +489,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
         ligne12.supprimer();
 
         raffraichirInterface();
-        connecteur.cleanDirectory(programmerPathTempFileDirectory);
+        //connecteur.cleanDirectory(programmerPathTempFileDirectory);
 
         if (!initialisation.getItem().equals("none")) {
 
@@ -497,7 +501,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
             activerBtnProgrammer(false);
             testParamsProg();
             raffraichirImagePanneau();
-            connecteur.askForResetProcess();
+            //connecteur.askForResetProcess();
             connecteur.envoyerData(Character.toString('t'));
             echo = false;
             Constants.tempo(2000);
@@ -517,7 +521,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
             testParamsProg();
             raffraichirImagePanneau();
-            connecteur.askForResetProcess();
+            //connecteur.askForResetProcess();
         }
 
     }
@@ -2402,7 +2406,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
             public void run() {
             
             try {
-            connecteur.singleProgramme(hexLocationsParamsProperties, envVariable, programmerPathParamsProperties, programmerParamsProperties, deviceEnTest, binaireLocation, intNombreDeVoiesCarteEnTest, programmerPathTempFileDirectory);
+            connecteur.singleProgramme(hexLocations1ParamsProperties, envVariable, programmerPathParamsProperties, programmerParamsProperties, deviceEnTest1, binaireLocation, intNombreDeVoiesCarteEnTest, programmerPathTempFileDirectory);
             //System.out.println("Retour programmation. Code reçu: " + comm);
             
             } catch (IOException ex) {
@@ -2571,6 +2575,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
         progBarre.setValue(0);
         progBarre.setString("En attente lancement de programmation");
         progBarre.setStringPainted(true);
+        /*
         if (CYCLES == Constants.CYCLES_LIM) {
 
             System.err.println("RELANCE APRES INTERRUPTION PROCESSUS!");
@@ -2579,7 +2584,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
             STOPS++;
 
         }
-
+        */
         TOTAL++;
 
         System.out.println("Nombre de cycles total: " + TOTAL);
@@ -2712,7 +2717,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
             hexLocalisation.setText(ListeBinairesEnregistres.get(comboListeProduits.getSelectedIndex() - 1));
             nombreVoies.setText(listesVoies.get(comboListeProduits.getSelectedIndex() - 1));
             nombreDeVoiesCarteEnTest = listesVoies.get(comboListeProduits.getSelectedIndex() - 1);
-            deviceEnTest = listeDevicesEnregistres.get(comboListeProduits.getSelectedIndex() - 1);
+            deviceEnTest1 = listeDevicesEnregistres.get(comboListeProduits.getSelectedIndex() - 1);
             matriceAprogrammer = listesMatrices.get(comboListeProduits.getSelectedIndex() - 1);
             extraireLignesColonnes(matriceAprogrammer);
 
@@ -2721,7 +2726,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
             hexLocalisation.setText("Aucun produit sélectionné!");
             nombreVoies.setText("");
             nombreDeVoiesCarteEnTest = null;
-            deviceEnTest = null;
+            deviceEnTest1 = null;
             produitAprogrammer = null;
             matriceAprogrammer = null;
 
@@ -2767,7 +2772,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
         if (selectedProduct != 0) {
 
             produitAprogrammer = listesProduits.get(selectedProduct);
-            nomProduit.setText(produitAprogrammer + " - Microcontôleur: " + deviceEnTest + " - Voies: " + nombreDeVoiesCarteEnTest + " - Programmateur: " + programmerParamsProperties + " - Matrice: " + matriceAprogrammer);
+            nomProduit.setText(produitAprogrammer + " - Microcontôleur: " + deviceEnTest1 + " - Voies: " + nombreDeVoiesCarteEnTest + " - Programmateur: " + programmerParamsProperties + " - Matrice: " + matriceAprogrammer);
             binaireLocation = ListeBinairesEnregistres.get(selectedProduct - 1);
             //System.out.println("localistaion binaire: " + binaireLocation);
             emplacementBinaire.setText(binaireLocation);
@@ -2781,7 +2786,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
             nomProduit.setText("Aucun produit sélectionné!");
             emplacementBinaire.setText("");
             nombreDeVoiesCarteEnTest = null;
-            deviceEnTest = null;
+            deviceEnTest1 = null;
             produitAprogrammer = null;
 
         }
@@ -3795,8 +3800,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
     }
 
     private void enregistrerNouvelleCarte(String localisationNouveauBinaire, String nomNouveauBinaire, String nombreDeVoiesNouvelleCarte, String nouveauDevice1, String matriceNouveauPanneau) {
-        
-        
+
         comboListeProduits.addItem(nomNouveauBinaire);
         ListeBinairesEnregistres.add(localisationNouveauBinaire);
         listesProduits.add(nomNouveauBinaire);
@@ -3810,10 +3814,10 @@ public class Interface extends javax.swing.JFrame implements Observer {
         nombreVoiesNouvelleCarte.setText("");
         nouvelleMatrice.setText("");
 
-        initialisation.setBinaryLocations1(initialisation.getBinaryLocations1()+ ";" + localisationNouveauBinaire);
+        initialisation.setBinaryLocations1(initialisation.getBinaryLocations1() + ";" + localisationNouveauBinaire);
         initialisation.setProductNames(initialisation.getProductNames() + ";" + nomNouveauBinaire);
         initialisation.setNombreVoies(initialisation.getNombreVoies() + ";" + nombreDeVoiesNouvelleCarte);
-        initialisation.setDevice1(initialisation.getDevice1()+ ";" + nouveauDevice1);
+        initialisation.setDevice1(initialisation.getDevice1() + ";" + nouveauDevice1);
         initialisation.setMatrice(initialisation.getMatrice() + ";" + matriceNouveauPanneau);
 
         initializer.update("binaryLocations1", initialisation.getBinaryLocations1());
@@ -3821,10 +3825,10 @@ public class Interface extends javax.swing.JFrame implements Observer {
         initializer.update("voies", initialisation.getNombreVoies());
         initializer.update("device1", initialisation.getDevice1());
         initializer.update("matrice", initialisation.getMatrice());
-        
+
     }
 
-    private ArrayList<String> extraireDevices(String devices) {
+    private ArrayList<String> extraireAdresses(String devices) {
 
         String[] liste = devices.split(";");
         ArrayList<String> arrList = new ArrayList<String>();
@@ -3897,18 +3901,30 @@ public class Interface extends javax.swing.JFrame implements Observer {
             limCommutateur = Integer.parseInt(nombreVoiesCommutateurParamsProperties);
         }
 
-        // Recherche du fichier binaire
+        // Recherche du fichier binaire microcontrôleur1
         if (initialisation.getBinaryLocations1().equals("na")) {
 
             //System.out.println("BinaryLocation = " + initialisation.getBinaryLocations());
         } else {
 
             //System.out.println("BinaryLocation = " + initialisation.getBinaryLocations());
-            hexLocationsParamsProperties = initialisation.getBinaryLocations1();
-            ListeBinairesEnregistres = extraireLocalisationBinaires(hexLocationsParamsProperties);
+            hexLocations1ParamsProperties = initialisation.getBinaryLocations1();
+
+        }
+
+        // Recherche du fichier binaire microcontrôleur2
+        if (initialisation.getBinaryLocations2().equals("na")) {
+
+            //System.out.println("BinaryLocation = " + initialisation.getBinaryLocations());
+        } else {
+
+            //System.out.println("BinaryLocation = " + initialisation.getBinaryLocations());
+            hexLocations2ParamsProperties = initialisation.getBinaryLocations2();
+
         }
 
         // Recherche nom du produit
+        /*
         if (initialisation.getProductNames().equals("na")) {
 
             //System.out.println("liste noms de produits = " + initialisation.getProductNames());
@@ -3929,7 +3945,8 @@ public class Interface extends javax.swing.JFrame implements Observer {
             }
 
         }
-
+        */
+        
         // Recherche nombre de voies à programmer (nombre de carte par panneau)
         if (initialisation.getNombreVoies().equals("na")) {
 
@@ -3944,22 +3961,36 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
         }
 
-        // Recherche nom du microcontrôleur à programmer
+        // Recherche nom du microcontrôleur1 à programmer
         if (initialisation.getDevice1().equals("na")) {
 
             //System.out.println("liste des devices lues = " + initialisation.getDevice());
-            nombreVoies.setText("Aucun device enregistré");
+            nombreVoies.setText("Aucun device1 enregistré");
 
         } else {
 
             //System.out.println("liste des devices lus  = " + initialisation.getDevice());
             devicesParamsProperties = initialisation.getDevice1();
-            listeDevicesEnregistres = extraireDevices(devicesParamsProperties);
+            //listeDevicesEnregistres = extraireAdresses(devicesParamsProperties);
 
         }
 
-        // Recherche type de programmateur (code programmateur) 
-        if (initialisation.getProgrammer().equals("na")) {
+        // Recherche nom du microcontrôleur2 à programmer
+        if (initialisation.getDevice2().equals("na")) {
+
+            nombreVoies.setText("Aucun device2 enregistré");
+
+        } else {
+
+            //System.out.println("liste des devices lus  = " + initialisation.getDevice());
+            devicesParamsProperties = initialisation.getDevice1();
+            //listeDevicesEnregistres = extraireAdresses(devicesParamsProperties);
+
+        }
+
+        // Recherche des adresses pour le microntrôleur1 à programmer
+      
+        if (initialisation.getAdresses1().equals("na")) {
 
             //System.out.println("liste des devices lues = " + initialisation.getProgrammer());
             nombreVoies.setText("Aucun programmateur enregistré");
@@ -3967,7 +3998,22 @@ public class Interface extends javax.swing.JFrame implements Observer {
         } else {
 
             //System.out.println("Programmateur enregistré  = " + initialisation.getProgrammer());
-            programmerParamsProperties = initialisation.getProgrammer();
+            //programmerParamsProperties = initialisation.getProgrammer();
+            listesAdresses1 = extraireAdresses(initialisation.getAdresses1());
+        }
+        
+         // Recherche des adresses pour le microntrôleur2 à programmer
+      
+        if (initialisation.getAdresses2().equals("na")) {
+
+            //System.out.println("liste des devices lues = " + initialisation.getProgrammer());
+            nombreVoies.setText("Aucun programmateur enregistré");
+
+        } else {
+
+            //System.out.println("Programmateur enregistré  = " + initialisation.getProgrammer());
+            //programmerParamsProperties = initialisation.getProgrammer();
+             listesAdresses1 = extraireAdresses(initialisation.getAdresses2());
 
         }
 
@@ -3983,7 +4029,8 @@ public class Interface extends javax.swing.JFrame implements Observer {
             programmerPathParamsProperties = initialisation.getProgrammerDirectory();
 
         }
-
+        
+        /*
         // Recherche emplacement du repertoire des fichiers temporaires du programmateur
         String[] tab = programmerPathParamsProperties.split("\\\\");
 
@@ -3999,6 +4046,9 @@ public class Interface extends javax.swing.JFrame implements Observer {
         System.out.println("complete path: " + "java -jar " + workDirectoryPath + "\\commutateur.jar");
 
         System.out.println("workDirectoryPath:" + workDirectoryPath);
+       
+        */
+        
         // Recherche variable d'environnement pour la commande Java
         if (initialisation.getVarEnv().equals("na")) {
 
@@ -4159,10 +4209,10 @@ public class Interface extends javax.swing.JFrame implements Observer {
                 try {
                     if (!mono) {
                         connecteur.setSequenceInterrompue(1);
-                        comm = connecteur.program(hexLocationsParamsProperties, envVariable, programmerPathParamsProperties, programmerParamsProperties, deviceEnTest, binaireLocation, intNombreDeVoiesCarteEnTest, programmerPathTempFileDirectory);
+                        comm = connecteur.program(hexLocations1ParamsProperties, envVariable, programmerPathParamsProperties, programmerParamsProperties, deviceEnTest1, binaireLocation, intNombreDeVoiesCarteEnTest, programmerPathTempFileDirectory);
                     } else {
                         connecteur.setSequenceInterrompue(monoLocation);
-                        comm = connecteur.program(hexLocationsParamsProperties, envVariable, programmerPathParamsProperties, programmerParamsProperties, deviceEnTest, binaireLocation, monoLocation, programmerPathTempFileDirectory);
+                        comm = connecteur.program(hexLocations1ParamsProperties, envVariable, programmerPathParamsProperties, programmerParamsProperties, deviceEnTest1, binaireLocation, monoLocation, programmerPathTempFileDirectory);
                     }
 
                     //System.out.println("Retour programmation. Code reçu: " + comm);
@@ -4388,10 +4438,10 @@ public class Interface extends javax.swing.JFrame implements Observer {
             nombreDeVoiesCarteEnTest = listesVoies.get(selectedProduct - 1);
             intNombreDeVoiesCarteEnTest = Integer.parseInt(nombreDeVoiesCarteEnTest);
             System.out.println("nombre de voies carte en test (int): " + intNombreDeVoiesCarteEnTest);
-            deviceEnTest = listeDevicesEnregistres.get(selectedProduct - 1);
+            deviceEnTest1 = listeDevicesEnregistres.get(selectedProduct - 1);
             matriceAprogrammer = listesMatrices.get(selectedProduct - 1);
             extraireLignesColonnes(matriceAprogrammer);
-            nomProduit.setText(produitAprogrammer + " - Microcontrôleur: " + deviceEnTest + " - Voies: " + nombreDeVoiesCarteEnTest + " - Programmateur: " + programmerParamsProperties + " - Matrice: " + matriceAprogrammer);
+            nomProduit.setText(produitAprogrammer + " - Microcontrôleur: " + deviceEnTest1 + " - Voies: " + nombreDeVoiesCarteEnTest + " - Programmateur: " + programmerParamsProperties + " - Matrice: " + matriceAprogrammer);
             emplacementBinaire.setText(binaireLocation);
             envVariable = true;
             raffraichirInterface();
@@ -4402,7 +4452,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
             nomProduit.setText("Aucun produit sélectionné!");
             emplacementBinaire.setText("");
             nombreDeVoiesCarteEnTest = null;
-            deviceEnTest = null;
+            deviceEnTest1 = null;
             produitAprogrammer = null;
 
         }
