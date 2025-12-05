@@ -49,23 +49,21 @@ public class Constants {
     // Signalisation résultats des étapes de test
     //********************************************************************************************************
     // ERREURS TRACE1
-    static String E1_LOG1 = "Programmer not found.";
-    static String E2_LOG1 = "terminated abruptly.";
-    static String E3_LOG1 = "Failed to get Device ID";
-    static String E4_LOG1 = "Connection Failed.";
-    static String E5_LOG1 = "IO Error Target voltage detected terminated abruptly";
-    static String E6_LOG1 = "Attempting to connect IPE server";
+    static String E1_LOG1 = "ERROR: Could not connect debugger.";
+   
 
-    static String[] ERREURS_LOG1 = {E1_LOG1, E2_LOG1, E3_LOG1, E4_LOG1, E5_LOG1, E6_LOG1};
+    static String[] ERREURS_LOG1 = {E1_LOG1};
 
     // REQUIS TRACE1
-    static String R1_LOG1 = "Program Succeeded.";
+    static String R1_LOG1 = "Flashing completed successfully!";
 
     static String[] REQUIS_LOG1 = {R1_LOG1};
+    //********************************************************************************************************
+
     static String IMAGES_DIRECTORY = ".//images";
     static int CYCLES_LIM = 6;
     static long PERIOD_MAX_LENGTH = 20L;
-    static long TIMING = 2000;
+    static long TIMING = 200;
 
     //********************************************************************************************************
     static void tempo(long duree) {

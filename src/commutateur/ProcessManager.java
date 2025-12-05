@@ -259,5 +259,24 @@ public class ProcessManager {
         port = serialPortName;
 
     }
+    
+      public void processShellCommand(String commande) throws IOException, InterruptedException {
+
+        if (!processId.equals("none")) {
+
+            String[] command = {"powershell.exe", "-Command", commande};
+            ProcessBuilder processBuilder = new ProcessBuilder(command);
+            Process process = processBuilder.start();
+            process.waitFor();
+            String[] command2 = {"powershell.exe", "exit"};
+            processBuilder = new ProcessBuilder(command2);
+            // Démarrer le processus
+            process = processBuilder.start();
+
+            // Attendre la fin du processus
+            process.waitFor();
+        }
+
+    }
 
 }

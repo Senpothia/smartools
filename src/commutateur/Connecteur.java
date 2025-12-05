@@ -328,105 +328,33 @@ public class Connecteur extends Observable {
             count++;
             envoyerData(Character.toString(count));
 
-            //tempo(10000);  // pour tests
-            //System.out.println("Début programmation");
-            //cleanDirectory(programmerPathTempDir);
             cleanDirectory2(".\\logs\\logs.txt");
-            tempo(Constants.TIMING);  // valeur initiale = 250
+            //tempo(Constants.TIMING);  
             programmationCompleted("->START:99:" + i);
-            //ProcessBuilder processBuilder = new ProcessBuilder();
-            //processBuilder.command("cmd.exe", "/c", "java -jar " + programmerPath + " /" + programmer + " /" + device + " /F" + binaryLocation + " /M /W /OY2013 >.\\logs\\logs.txt");
-            processBuilder.command("cmd.exe", "/c", "java -jar " + programmerPath + " /" + programmer + " /" + device + " /F" + binaryLocation + " /M /OY2013 >.\\logs\\logs.txt");
-            Process process = processBuilder.start();
-            System.out.println("Envoi commande de programmation");
-            process.waitFor();
-            tempo(200);   // valeur initiale = 200
+
+            //processManager.processShellCommand("commander flash C:\\Users\\Michel\\Desktop\\Smartloxx-programmateur\\binaires1\\app_v1_0.bin --address 0x0 --device EFR32BG12P432F1024GL125 >.\\logs\\logs.txt");
+            //processBuilder.command("cmd.exe", "/c", "commander flash C:\\Users\\Michel\\Desktop\\Smartloxx-programmateur\\binaires1\\app_v1_0.bin --address 0x0 --device EFR32BG12P432F1024GL125 >.\\logs\\logs.txt");
+            processManager.processShellCommand("commander flash C:\\Users\\Michel\\Desktop\\Smartloxx-programmateur\\binaires1\\app_v1_0.bin --address 0x0 --device EFR32BG12P432F1024GL125 | Out-File -FilePath .\\logs\\logs.txt -Encoding utf8");
+            tempo(200);
 
             System.out.println("Fin programmation");
             System.out.println("Début vérification");
             int control = progController.find(".\\logs\\logs.txt", Constants.ERREURS_LOG1, Constants.REQUIS_LOG1);
             System.out.println("code control: " + control);
+
+            programmationCompleted("->PROG:" + i + ":" + control);
             if (control == -1) {
 
-                System.out.println("tentative - code -1 / -54");
-                programmationCompleted("->PROG:" + i + ":-54");
-                processBuilder.command("cmd.exe", "/c", "java -jar " + programmerPath + " /" + programmer + " /" + device + " /F" + binaryLocation + " /M /W /OY2013 >.\\logs\\logs.txt");
-                Process process2 = processBuilder.start();
-                process2.waitFor();
-                control = progController.find(".\\logs\\logs.txt", Constants.ERREURS_LOG1, Constants.REQUIS_LOG1);
-                if (control == -1) {
-
-                    control = -55;
-                    programmationCompleted("->PROG:" + i + ":-55");
-
-                    return 1;
-                }
-
+                envoyerData(Character.toString('t'));
+                break;
             }
 
-            if (control == -4) {
+            if (control == -9) {
 
-                System.out.println("tentative 2 - code -4 / -54");
-                programmationCompleted("->PROG:" + i + ":-54");
-                processBuilder.command("cmd.exe", "/c", "java -jar " + programmerPath + " /" + programmer + " /" + device + " /F" + binaryLocation + " /M /W /OY2013 >.\\logs\\logs.txt");
-                Process process3 = processBuilder.start();
-                process3.waitFor();
-                control = progController.find(".\\logs\\logs.txt", Constants.ERREURS_LOG1, Constants.REQUIS_LOG1);
-
-                if (control == -4) {
-
-                    System.out.println("tentative 2 - code -4 /-66");
-                    control = -66;
-                    programmationCompleted("->PROG:" + i + ":-66");
-
-                    return 1;
-                }
+                envoyerData(Character.toString('t'));
+                break;
             }
 
-            if (control == -33) {
-
-                System.out.println("Interruption processus -  sequence: " + i);
-                processManager.killProcess();
-                sequenceInterrompue = i;
-                programmationCompleted("->PROG:" + i + ":-33");
-                return -33;
-
-            }
-
-            if (control == -5) {
-
-                System.out.println("Problème d'alimentation");
-                programmationCompleted("->PROG:" + i + ":-77");
-                return -77;
-
-            }
-
-            if (control == -88) {
-
-                System.out.println("Blocage programmateur");
-                programmationCompleted("->PROG:" + i + ":-88");
-                return -88;
-
-            }
-
-            System.out.println("code controle: " + control);
-            programmationCompleted("->PROG:" + i + ":" + control);
-
-            if (i == 1 || error) {
-
-                System.out.println("Interruption processus en phase de programmation");
-                processManager.getJavaProcesses();
-                error = false;
-
-            }
-
-            if (control < 0) {
-
-                System.out.println("Code <0");
-                error = true;
-            }
-
-            System.out.println("Id process: " + processManager.getProcessId());
         }
 
         sequenceInterrompue = 1;

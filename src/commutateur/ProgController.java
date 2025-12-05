@@ -13,6 +13,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.nio.channels.OverlappingFileLockException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -42,6 +43,7 @@ public class ProgController {
 
     }
 
+    /*
     public int find(String logfile, String[] erreurs, String[] requis) throws IOException {
 
         int j = 0;
@@ -51,16 +53,7 @@ public class ProgController {
             System.out.println("Test erreur/preréquis dans le log");
             int analyse = isFileAvailable4(logfile);
 
-            if (analyse == 0) {
-
-                return -33;
-            }
-
-            if (analyse == 8) {
-
-                return -88;
-            }
-
+          
             try {
 
                 //System.out.println("le fichier est disponible");
@@ -75,7 +68,7 @@ public class ProgController {
 
                     // lecture de la prochaine ligne
                     line = reader.readLine();
-                    //System.out.println(line);
+                    System.out.println(line);
 
                     if (erreurs != null && line != null) {
 
@@ -94,7 +87,7 @@ public class ProgController {
 
                         for (int i = 0; i < requis.length; i++) {
 
-                            if (line.contains(requis[i])) {
+                            if (line.contains("successfully")) {
 
                                 codeControl = 1;
                             }
@@ -120,6 +113,66 @@ public class ProgController {
         }
         return codeControl;
     }
+     */
+    public int find(String logfile, String[] erreurs, String[] requis) throws IOException {
+
+        int j = 0;
+        int codeControl = 0;
+
+        while (j < 2) {
+            System.out.println("Test erreur/preréquis dans le log");
+            int analyse = isFileAvailable4(logfile);
+
+            if (analyse == -9) {
+
+                return -9;
+            }
+
+            try (BufferedReader reader = new BufferedReader(new FileReader(logfile))) {
+
+                String line;
+
+                while ((line = reader.readLine()) != null) {
+
+                    System.out.println(line);
+
+                    // Test erreurs
+                    if (erreurs != null) {
+                        for (int i = 0; i < erreurs.length; i++) {
+                            if (line.contains(erreurs[i])) {
+                                codeControl = -(i + 1);
+                                break;
+                            }
+                        }
+                    }
+
+                    // Test requis
+                    if (codeControl == 0 && requis != null) {
+                        for (int i = 0; i < requis.length; i++) {
+                            if (line.contains(requis[i])) {
+                                codeControl = 1;
+                            }
+                        }
+                    }
+
+                    if (codeControl != 0) {
+                        break;
+                    }
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            if (codeControl == 0) {
+                j++;
+            } else {
+                return codeControl;
+            }
+        }
+
+        return codeControl;
+    }
 
     private void isFileAvailable(String logFile) {
 
@@ -138,51 +191,9 @@ public class ProgController {
         double size1 = 0;
         Boolean end = false;
         int counter0 = 0;
-        int counter1 = 0;
-        int counter2 = 0;
-        int counter3 = 0;
-        int counter4 = 0;
-        int counter5 = 0;
 
-        // Sans erreur de programmation
-        // ICD4
-        /*
-        double d1 = 0.98335d;
-        double d2 = 0.98340d;
-         */
-        // ICD5
-        double d1 = 0.9677734d;
-        //double d2 = 0.9677740d;
-        double d2 = 1.0035;
-
-        // Erreur après déconnexion 1
-        double d3 = 0.618162d;
-        double d4 = 0.618170d;
-
-        // Erreur après déconnexion 2
-        double d5 = 0.583007d;
-        double d6 = 0.583008d;
-
-        // Reprise connexion après rupture
-        //1.0185546875 
-        double d7 = 1.01850d;
-        double d8 = 1.01870d;
-
-        // Surcharge
-        // ICD5
-        // 0.0546875
-        double d9 = 0.0546860d;
-        double d10 = 0.064550d;
-
-        // Absence carte
-        double d11 = 0.538710d;
-        double d12 = 0.5510000;
-
-        // Programmation ok après détection d'une erreur
-        double d13 = 0.90120d;
-        double d14 = 0.92120;
-
-        int lim = 200000;
+        int lim = 1000;
+        int lim2 = 10000;
 
         while (!end) {
 
@@ -192,83 +203,21 @@ public class ProgController {
             //Constants.tempo(50);
             size0 = size1;
 
+            if (size0 == size1 && size1 == 0) {
+                //System.out.println("test gr1");
+                counter0++;
+                if (counter0 > lim2) {
+                    System.out.println("Sortie -9");
+                    return -9;
+
+                }
+            }
+
             if (size0 == size1 && size1 != 0) {
                 //System.out.println("test gr1");
                 counter0++;
                 if (counter0 > lim) {
                     System.out.println("Sortie 1");
-                    end = true;
-
-                }
-            }
-
-            if (Double.compare(size0 / 1024, d1) == 1 && Double.compare(size0 / 1024, d2) == -1) {
-                //System.out.println("test gr2");
-                counter1++;
-                if (counter1 > 1000) {
-                    System.out.println("Sortie 2");
-                    end = true;
-
-                }
-            }
-
-            if (Double.compare(size0 / 1024, d3) == 1 && Double.compare(size0 / 1024, d4) == -1) {
-                //System.out.println("test gr3");
-                counter2++;
-                if (counter2 > 10000) {
-                    System.out.println("Sortie 3");
-                    end = true;
-
-                }
-            }
-
-            if (Double.compare(size0 / 1024, d5) == 1 && Double.compare(size0 / 1024, d6) == -1) {
-                //System.out.println("test gr4");
-                counter3++;
-                if (counter3 > 10000) {
-                    System.out.println("Sortie 4");
-                    end = true;
-
-                }
-            }
-
-            if (Double.compare(size0 / 1024, d7) == 1 && Double.compare(size0 / 1024, d8) == -1) {
-                //System.out.println("test gr5");
-                counter4++;
-                if (counter4 > 10000) {
-                    System.out.println("Sortie 5");
-                    end = true;
-
-                }
-            }
-
-            if (Double.compare(size0 / 1024, d9) == 1 && Double.compare(size0 / 1024, d10) == -1) {
-                //System.out.println("test gr6");
-                counter5++;
-                if (counter5 > 200000) {  // 100000, 200000
-
-                    System.out.println("Sortie 6");
-                    end = true;
-                    return 8;
-                }
-
-            }
-
-            if (Double.compare(size0 / 1024, d11) == 1 && Double.compare(size0 / 1024, d12) == -1) {
-                //System.out.println("test gr7");
-                counter3++;
-                if (counter3 > 10000) {
-                    System.out.println("Sortie 41");
-                    end = true;
-
-                }
-            }
-
-            if (Double.compare(size0 / 1024, d13) == 1 && Double.compare(size0 / 1024, d14) == -1) {
-                //System.out.println("test gr8");
-                counter1++;
-                if (counter1 > 1000) {
-                    System.out.println("Sortie 21");
                     end = true;
 
                 }

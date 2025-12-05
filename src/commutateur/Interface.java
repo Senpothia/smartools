@@ -176,8 +176,8 @@ public class Interface extends javax.swing.JFrame implements Observer {
         statutPGRM.setForeground(Color.RED);
         statutPGRM.setOpaque(true);
 
-        this.getContentPane().setBackground(new Color(50, 131, 168));
-
+        this.getContentPane().setBackground(new Color(50, 131, 168)); // 50, 131, 168
+        
         console.setBackground(new Color(247, 242, 208));
         console.setOpaque(true);
         console.setForeground(Color.red);
@@ -501,6 +501,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
         ligne12.supprimer();
 
         raffraichirInterface();
+       // this.getContentPane().setBackground(new Color(12, 145, 72)); // 50, 131, 16850
         //connecteur.cleanDirectory(programmerPathTempFileDirectory);
 
         if (!initialisation.getItem().equals("none")) {
@@ -3178,7 +3179,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
         }
          */
-        
+
         if (programmerPathParamsProperties == null || programmerPathParamsProperties.equals("na")) {
 
             console.setText("Le programmateur n'est pas localisé");
@@ -3283,27 +3284,30 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
                 }
 
-                if (Integer.parseInt(tab[2]) == -33) {
+                if (Integer.parseInt(tab[2]) == -1) {
 
-                    compteurReset++;
-                    System.out.println("demande relance après interruption processus");
-                    progBarre.setString("RESET en cours...");
-                    if (compteurReset < 3) {
+                    System.err.println("Défaut d'alimentation sur le programmateur");
+                    //progBarre.setString("RESET en cours...");
 
-                        activerProgrammation();
+                    montrerError("Problème d'alimentation!\nVérifiez l'alimentation du programmateur", "Erreur banc");
+                    console.setText("PROBLEME D'ALIMENTATION PROGRAMMATEUR");
+                    inhibBtn();
+                    menuParametres.setEnabled(true);
+                    menuConnexion.setEnabled(true);
 
-                    } else {
+                }
 
-                        montrerError("Problème d'alimentation!\nVérifiez que le banc est sous tension et relancez l'application", "Erreur banc");
-                        console.setText("PROBLEME D'ALIMENTATION");
-                        inhibBtn();
-                        menuParametres.setEnabled(true);
-                        menuConnexion.setEnabled(true);
+                if (Integer.parseInt(tab[2]) == -9) {
 
-                    }
+                    System.err.println("Programmateur hors service");
+                    //progBarre.setString("RESET en cours...");
 
-                    TOTAL = CYCLES;
-                    CYCLES = 0;
+                    montrerError("Programmateur hors servivce", "Erreur banc");
+                    console.setText("PROGRAMMATEUR HORS SERVICE");
+                    inhibBtn();
+                    menuParametres.setEnabled(true);
+                    menuConnexion.setEnabled(true);
+
                 }
 
             }
@@ -3971,6 +3975,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
             nombreDeVoiesEnregistresParamsProperties = initialisation.getNombreVoies();
             listesVoies = extraireVoies(nombreDeVoiesEnregistresParamsProperties);
             intNombreDeVoiesCarteEnTest = Integer.parseInt(initialisation.getNombreVoies());
+            nombreDeVoiesCarteEnTest = nombreDeVoiesEnregistresParamsProperties;
             System.out.println("commutateur.Interface.initialisationParams()- nombre de voies à programmer: " + intNombreDeVoiesCarteEnTest);
         }
 
@@ -3984,6 +3989,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
             //System.out.println("liste des devices lus  = " + initialisation.getDevice());
             device1ParamsProperties = initialisation.getDevice1();
+            deviceEnTest1 = device1ParamsProperties;
             //listeDevicesEnregistres = extraireAdresses(devicesParamsProperties);
             System.out.println("commutateur.Interface.initialisationParams()- device1 à programmer: " + device1ParamsProperties);
         }
@@ -3997,6 +4003,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
             //System.out.println("liste des devices lus  = " + initialisation.getDevice());
             device2ParamsProperties = initialisation.getDevice2();
+            deviceEnTest2 = device2ParamsProperties;
             //listeDevicesEnregistres = extraireAdresses(devicesParamsProperties);
             System.out.println("commutateur.Interface.initialisationParams()- device2 à programmer: " + device2ParamsProperties);
 
@@ -4029,7 +4036,6 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
         }
 
-        
         // Recherche repertoire d'installation de la plateforme Microchip
         if (initialisation.getProgrammerDirectory().equals("na")) {
 
@@ -4042,44 +4048,13 @@ public class Interface extends javax.swing.JFrame implements Observer {
             programmerPathParamsProperties = initialisation.getProgrammerDirectory();
 
         }
-         
-        // Recherche emplacement du repertoire des fichiers temporaires du programmateur
-        /*
-        String[] tab = programmerPathParamsProperties.split("\\\\");
 
-        for (int i = 0; i < tab.length; i++) {
+        String testString = "bonjour Michel";
+        String mot = "Michel";
+        if (testString.contains(mot)) {
 
-            //System.out.println(tab[i]);
+            System.out.println("Test contains = ok");
         }
-        programmerPathTempFileDirectory = "C:\\Users\\" + tab[2] + "\\.mchp_ipe\\";
-        System.out.println("programmerPathTempFileDirectory: " + programmerPathTempFileDirectory);
-
-        workDirectoryPath = "C:\\Users\\" + tab[2] + "\\picProgrammer";
-
-        System.out.println("complete path: " + "java -jar " + workDirectoryPath + "\\commutateur.jar");
-
-        System.out.println("workDirectoryPath:" + workDirectoryPath);
-         */
-        // Recherche variable d'environnement pour la commande Java
-        /*
-        if (initialisation.getVarEnv().equals("na")) {
-
-            System.out.println("varEnv = " + initialisation.getVarEnv());
-        } else {
-
-            System.out.println("varEnv = " + initialisation.getVarEnv());
-            if (initialisation.getVarEnv().equals("true")) {
-
-                envVariable = true;
-            }
-
-            if (initialisation.getVarEnv().equals("false")) {
-
-                envVariable = false;
-            }
-
-        }
-         */
         // Recherche des matrices
         if (initialisation.getMatrice().equals("na")) {
 
@@ -4108,6 +4083,8 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
         }
 
+        nomProduit.setText(produitAprogrammer + " - Voies: " + nombreDeVoiesCarteEnTest + " - Matrice: " + matriceAprogrammer);
+        emplacementBinaire.setText("Binaires:  A définir!");
     }
 
     private void raffraichirInterface() {
@@ -4235,7 +4212,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
                             connecteur.envoyerData(Character.toString('t'));
                             console.setText("Cycle de programmation terminée");
-                            Constants.tempo(2000);
+                            Constants.tempo(200);
                             activerBtnACQ(true);
                             activerBtnProgrammer(false);
                             menuParametres.setEnabled(true);
