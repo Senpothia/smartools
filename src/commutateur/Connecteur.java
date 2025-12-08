@@ -314,16 +314,20 @@ public class Connecteur extends Observable {
     }
 
     public int program(String hexLocation, boolean envVariable, String programmerPath, String programmer, String device, String binaryLocation, int nombreDeVoiesCarteEnTest, String programmerPathTempDir) throws IOException, InterruptedException {
-
+            
+        System.out.println("sequence interrompue: " +  sequenceInterrompue);
+        int carte = 0;
         char count = 48;
         for (int j = 1; j < sequenceInterrompue; j++) {
 
             count++;
         }
 
-        for (int i = sequenceInterrompue; i < nombreDeVoiesCarteEnTest + 1; i++) {
-
+        for (int i = sequenceInterrompue; i < nombreDeVoiesCarteEnTest +1; i++) {
+            
+            carte++;
             System.out.println("error: " + error);
+            System.out.println("PROGRAMMATION MICROCONTROLEUR 1, CARTE: " + carte);
 
             count++;
             envoyerData(Character.toString(count));
@@ -339,22 +343,62 @@ public class Connecteur extends Observable {
 
             System.out.println("Fin programmation");
             System.out.println("Début vérification");
-            int control = progController.find(".\\logs\\logs.txt", Constants.ERREURS_LOG1, Constants.REQUIS_LOG1);
-            System.out.println("code control: " + control);
+            int control1 = progController.find(".\\logs\\logs.txt", Constants.ERREURS_LOG1, Constants.REQUIS_LOG1);
+            System.out.println("code control: " + control1);
 
-            programmationCompleted("->PROG:" + i + ":" + control);
-            if (control == -1) {
+            //programmationCompleted("->PROG:" + i + ":" + control1);
+            if (control1 == -1) {
+
+                envoyerData(Character.toString('t'));
+                break;
+            }
+
+            if (control1 == -9) {
 
                 envoyerData(Character.toString('t'));
                 break;
             }
 
-            if (control == -9) {
+            //-------------------------------------------------------------------------------------------------------------------------------------------
+            count++;
+            envoyerData(Character.toString(count));
+            System.out.println("PROGRAMMATION MICROCONTROLEUR 2 - CARTE: " + carte);
+            cleanDirectory2(".\\logs\\logs.txt");
+            //tempo(Constants.TIMING);  
+            programmationCompleted("->START:99:" + i);
+
+            //processManager.processShellCommand("commander flash C:\\Users\\Michel\\Desktop\\Smartloxx-programmateur\\binaires1\\app_v1_0.bin --address 0x0 --device EFR32BG12P432F1024GL125 >.\\logs\\logs.txt");
+            //processBuilder.command("cmd.exe", "/c", "commander flash C:\\Users\\Michel\\Desktop\\Smartloxx-programmateur\\binaires1\\app_v1_0.bin --address 0x0 --device EFR32BG12P432F1024GL125 >.\\logs\\logs.txt");
+            processManager.processShellCommand("commander flash C:\\Users\\Michel\\Desktop\\Smartloxx-programmateur\\binaires2\\app_v1_0.bin --address 0x0 --device EFR32BG12P432F1024GL125 | Out-File -FilePath .\\logs\\logs.txt -Encoding utf8");
+            tempo(200);
+
+            System.out.println("Fin programmation");
+            System.out.println("Début vérification");
+            int control2 = progController.find(".\\logs\\logs.txt", Constants.ERREURS_LOG1, Constants.REQUIS_LOG1);
+            System.out.println("code control: " + control2);
+
+            //programmationCompleted("->PROG:" + i + ":" + control2);
+            if (control2 == -1) {
 
                 envoyerData(Character.toString('t'));
                 break;
             }
-            
+
+            if (control2 == -9) {
+
+                envoyerData(Character.toString('t'));
+                break;
+            }
+
+            if (control1 == 1 && control2 == 1) {
+
+                programmationCompleted("->PROG:" + i + ":" + 1);
+            } else {
+
+                programmationCompleted("->PROG:" + i + ":" + 0);
+
+            }
+
         }
 
         sequenceInterrompue = 1;
