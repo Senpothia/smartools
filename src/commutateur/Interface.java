@@ -4085,6 +4085,17 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
         nomProduit.setText(produitAprogrammer + " - Voies: " + nombreDeVoiesCarteEnTest + " - Matrice: " + matriceAprogrammer);
         emplacementBinaire.setText("Binaires:  A définir!");
+        boolean env = connecteur.executePowershellCommand(".\\logs\\env.txt", "Commander --version | Out-File -FilePath .\\logs\\env.txt -Encoding utf8", "Simplicity Commander ");
+        if(env){
+        
+            
+        }else{
+        
+            montrerError("Programmateur non localisé.\nMettre le programmateur dans le PATH", mot);
+            System.exit(0);
+        }
+        
+        
     }
 
     private void raffraichirInterface() {

@@ -98,6 +98,12 @@ public class ProcessManager {
         Files.deleteIfExists(Paths.get(".\\processes0.process"));
         resetFlags();
     }
+    
+     public void deleteFilesByName(String file) throws IOException {
+
+        Files.deleteIfExists(Paths.get(file));
+        resetFlags();
+    }
 
     public void extractProcessId() {
 

@@ -43,77 +43,6 @@ public class ProgController {
 
     }
 
-    /*
-    public int find(String logfile, String[] erreurs, String[] requis) throws IOException {
-
-        int j = 0;
-        int codeControl = 0;
-        while (j < 2) {
-
-            System.out.println("Test erreur/preréquis dans le log");
-            int analyse = isFileAvailable4(logfile);
-
-          
-            try {
-
-                //System.out.println("le fichier est disponible");
-                // Création d'un fileReader pour lire le fichier
-                FileReader fileReader = new FileReader(logfile);
-
-                // Création d'un bufferedReader qui utilise le fileReader
-                BufferedReader reader = new BufferedReader(fileReader);
-                String line = reader.readLine();
-
-                while (line != null) {
-
-                    // lecture de la prochaine ligne
-                    line = reader.readLine();
-                    System.out.println(line);
-
-                    if (erreurs != null && line != null) {
-
-                        for (int i = 0; i < erreurs.length; i++) {
-
-                            if (line.contains(erreurs[i])) {
-
-                                codeControl = -1 * (i + 1);
-                                break;
-                            }
-                        }
-
-                    }
-
-                    if (requis != null && line != null) {
-
-                        for (int i = 0; i < requis.length; i++) {
-
-                            if (line.contains("successfully")) {
-
-                                codeControl = 1;
-                            }
-                        }
-
-                    }
-
-                }
-                reader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-                //System.out.println("Fichier en cours d'écriture");
-            }
-
-            if (codeControl == 0) {
-
-                j++;
-            } else {
-
-                return codeControl;
-            }
-
-        }
-        return codeControl;
-    }
-     */
     public int find(String logfile, String[] erreurs, String[] requis) throws IOException {
 
         int j = 0;
@@ -174,17 +103,6 @@ public class ProgController {
         return codeControl;
     }
 
-    private void isFileAvailable(String logFile) {
-
-        double size = 0;
-        while (size < 0.7) {
-
-            File file = new File(logFile);
-            size = (double) file.length() / 1024;
-            System.out.println(getFileSizeKiloBytes(file));
-        }
-    }
-
     private int isFileAvailable4(String logFile) {
 
         double size0 = 0;
@@ -230,31 +148,6 @@ public class ProgController {
 
     private static String getFileSizeKiloBytes(File file) {
         return (double) file.length() / 1024 + "  kb";
-    }
-
-    private Boolean isFileAvailable2(String logFile) {
-
-        File processCheck = new File(logFile);
-        Boolean canBeDeleted = processCheck.canWrite();
-        System.out.println("isAvailable2: " + canBeDeleted);
-        return canBeDeleted;
-
-    }
-
-    public boolean isFileInUse(File file) {
-        try (FileInputStream fis = new FileInputStream(file);
-                FileChannel channel = fis.getChannel()) {
-
-            // Tente d'obtenir un verrou exclusif
-            channel.tryLock();
-            System.out.println("Le fichier est disponible.");
-            return false; // Si on obtient le verrou, le fichier n'est pas utilisé
-
-        } catch (OverlappingFileLockException | IOException e) {
-
-            System.out.println("Le fichier est en cours d'utilisation.");
-            return true; // Le fichier est en cours d'utilisation
-        }
     }
 
 }

@@ -354,7 +354,7 @@ public class Connecteur extends Observable {
                 envoyerData(Character.toString('t'));
                 break;
             }
-
+            
         }
 
         sequenceInterrompue = 1;
@@ -465,6 +465,29 @@ public class Connecteur extends Observable {
         processManager.extractSerialPort();
         portName = processManager.getPort();
         return portName;
+    }
+
+    public boolean executePowershellCommand(String log, String commande, String reponse) throws IOException {
+
+        String[] requis = {reponse};
+
+        try {
+            this.processManager.processShellCommand(commande);
+            int result = this.progController.find(log, null, requis);
+            this.processManager.deleteFilesByName(".\\logs\\env.txt");
+            if (result == 1) {
+
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Connecteur.class.getName()).log(Level.SEVERE, null, ex);
+            this.processManager.deleteFilesByName(".\\logs\\env.txt");
+            return false;
+        }
+
     }
 
 }
