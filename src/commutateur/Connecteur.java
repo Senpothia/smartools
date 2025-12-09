@@ -313,9 +313,9 @@ public class Connecteur extends Observable {
 
     }
 
-    public int program(String hexLocation, boolean envVariable, String programmerPath, String programmer, String device, String binaryLocation, int nombreDeVoiesCarteEnTest, String programmerPathTempDir) throws IOException, InterruptedException {
-            
-        System.out.println("sequence interrompue: " +  sequenceInterrompue);
+    public int program(String binary1Location, String binary2Location, String binary1, String binary2, String device1, String device2, int nombreDeVoiesCarteEnTest) throws IOException, InterruptedException {
+
+        System.out.println("sequence interrompue: " + sequenceInterrompue);
         int carte = 0;
         char count = 48;
         for (int j = 1; j < sequenceInterrompue; j++) {
@@ -323,8 +323,8 @@ public class Connecteur extends Observable {
             count++;
         }
 
-        for (int i = sequenceInterrompue; i < nombreDeVoiesCarteEnTest +1; i++) {
-            
+        for (int i = sequenceInterrompue; i < nombreDeVoiesCarteEnTest + 1; i++) {
+
             carte++;
             System.out.println("error: " + error);
             System.out.println("PROGRAMMATION MICROCONTROLEUR 1, CARTE: " + carte);
@@ -338,7 +338,8 @@ public class Connecteur extends Observable {
 
             //processManager.processShellCommand("commander flash C:\\Users\\Michel\\Desktop\\Smartloxx-programmateur\\binaires1\\app_v1_0.bin --address 0x0 --device EFR32BG12P432F1024GL125 >.\\logs\\logs.txt");
             //processBuilder.command("cmd.exe", "/c", "commander flash C:\\Users\\Michel\\Desktop\\Smartloxx-programmateur\\binaires1\\app_v1_0.bin --address 0x0 --device EFR32BG12P432F1024GL125 >.\\logs\\logs.txt");
-            processManager.processShellCommand("commander flash C:\\Users\\Michel\\Desktop\\Smartloxx-programmateur\\binaires1\\app_v1_0.bin --address 0x0 --device EFR32BG12P432F1024GL125 | Out-File -FilePath .\\logs\\logs.txt -Encoding utf8");
+            //processManager.processShellCommand("commander flash C:\\Users\\Michel\\Desktop\\Smartloxx-programmateur\\binaires1\\app_v1_0.bin --address 0x0 --device EFR32BG12P432F1024GL125 | Out-File -FilePath .\\logs\\logs.txt -Encoding utf8");
+            processManager.processShellCommand("commander flash " + binary1Location + "\\" + binary1 + " --address 0x0 --device " + device1 + " | Out-File -FilePath .\\logs\\logs.txt -Encoding utf8");
             tempo(200);
 
             System.out.println("Fin programmation");
@@ -369,7 +370,8 @@ public class Connecteur extends Observable {
 
             //processManager.processShellCommand("commander flash C:\\Users\\Michel\\Desktop\\Smartloxx-programmateur\\binaires1\\app_v1_0.bin --address 0x0 --device EFR32BG12P432F1024GL125 >.\\logs\\logs.txt");
             //processBuilder.command("cmd.exe", "/c", "commander flash C:\\Users\\Michel\\Desktop\\Smartloxx-programmateur\\binaires1\\app_v1_0.bin --address 0x0 --device EFR32BG12P432F1024GL125 >.\\logs\\logs.txt");
-            processManager.processShellCommand("commander flash C:\\Users\\Michel\\Desktop\\Smartloxx-programmateur\\binaires2\\app_v1_0.bin --address 0x0 --device EFR32BG12P432F1024GL125 | Out-File -FilePath .\\logs\\logs.txt -Encoding utf8");
+            //processManager.processShellCommand("commander flash C:\\Users\\Michel\\Desktop\\Smartloxx-programmateur\\binaires2\\app_v1_0.bin --address 0x0 --device EFR32BG12P432F1024GL125 | Out-File -FilePath .\\logs\\logs.txt -Encoding utf8");
+             processManager.processShellCommand("commander flash " + binary2Location + "\\" + binary2 + " --address 0x0 --device " + device2 + " | Out-File -FilePath .\\logs\\logs.txt -Encoding utf8");
             tempo(200);
 
             System.out.println("Fin programmation");

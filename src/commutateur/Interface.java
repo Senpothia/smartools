@@ -3866,10 +3866,10 @@ public class Interface extends javax.swing.JFrame implements Observer {
                 try {
                     if (!mono) {
                         connecteur.setSequenceInterrompue(1);
-                        comm = connecteur.program(hexLocation1ParamsProperties, envVariable, programmerPathParamsProperties, programmerParamsProperties, deviceEnTest1, binaireLocation, intNombreDeVoiesCarteEnTest, programmerPathTempFileDirectory);
+                        comm = connecteur.program(hexLocation1ParamsProperties, hexLocation2ParamsProperties, nomBinaire1, nomBinaire2, deviceEnTest1, deviceEnTest2, intNombreDeVoiesCarteEnTest);
                     } else {
                         connecteur.setSequenceInterrompue(monoLocation);
-                        comm = connecteur.program(hexLocation1ParamsProperties, envVariable, programmerPathParamsProperties, programmerParamsProperties, deviceEnTest1, binaireLocation, monoLocation, programmerPathTempFileDirectory);
+                        comm = connecteur.program(hexLocation1ParamsProperties, hexLocation2ParamsProperties, nomBinaire1, nomBinaire2, deviceEnTest1, deviceEnTest2, intNombreDeVoiesCarteEnTest);
                     }
 
                     //System.out.println("Retour programmation. Code reçu: " + comm);
