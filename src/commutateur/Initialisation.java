@@ -15,6 +15,8 @@ public class Initialisation {
     private String varEnv;
     private String binaryLocations1;
     private String binaryLocations2;
+    private String binary1;
+    private String binary2;
     private String keys1;
     private String keys2;
     private String productNames;
@@ -32,11 +34,13 @@ public class Initialisation {
     private String timing;
     private String single;
 
-    public Initialisation(String programmerDirectory, String varEnv, String binaryLocations1, String binaryLocations2, String keys1, String keys2, String productNames, String nombreVoies, String commutateur, String device1, String device2, String adresses1, String adresses2, String programmer, String matrice, String autoConnection, String item, String cycles, String timing, String single) {
+    public Initialisation(String programmerDirectory, String varEnv, String binaryLocations1, String binaryLocations2, String binary1, String binary2, String keys1, String keys2, String productNames, String nombreVoies, String commutateur, String device1, String device2, String adresses1, String adresses2, String programmer, String matrice, String autoConnection, String item, String cycles, String timing, String single) {
         this.programmerDirectory = programmerDirectory;
         this.varEnv = varEnv;
         this.binaryLocations1 = binaryLocations1;
         this.binaryLocations2 = binaryLocations2;
+        this.binary1 = binary1;
+        this.binary2 = binary2;
         this.keys1 = keys1;
         this.keys2 = keys2;
         this.productNames = productNames;
@@ -54,6 +58,9 @@ public class Initialisation {
         this.timing = timing;
         this.single = single;
     }
+
+   
+   
 
     public String getProgrammerDirectory() {
         return programmerDirectory;
@@ -215,7 +222,22 @@ public class Initialisation {
         this.single = single;
     }
 
-   
+    public String getBinary1() {
+        return binary1;
+    }
 
-   
+    public void setBinary1(String binary1) {
+        this.binary1 = binary1;
+    }
+
+    public String getBinary2() {
+        return binary2;
+    }
+
+    public void setBinary2(String binary2) {
+        this.binary2 = binary2;
+    }
+    
+    
+
 }
