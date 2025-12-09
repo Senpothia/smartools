@@ -177,7 +177,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
         statutPGRM.setOpaque(true);
 
         this.getContentPane().setBackground(new Color(50, 131, 168)); // 50, 131, 168
-        
+
         console.setBackground(new Color(247, 242, 208));
         console.setOpaque(true);
         console.setForeground(Color.red);
@@ -193,6 +193,26 @@ public class Interface extends javax.swing.JFrame implements Observer {
         emplacementBinaire.setForeground(Color.red);
         emplacementBinaire.setFont(new Font("Serif", Font.BOLD, 20));
 
+        afficheurBinaire2.setBackground(new Color(247, 242, 208));
+        afficheurBinaire2.setOpaque(true);
+        afficheurBinaire2.setForeground(Color.red);
+        afficheurBinaire2.setFont(new Font("Serif", Font.BOLD, 20));
+
+        afficheurProduit.setBackground(new Color(247, 242, 208));
+        afficheurProduit.setOpaque(true);
+        afficheurProduit.setForeground(Color.red);
+        afficheurProduit.setFont(new Font("Serif", Font.BOLD, 20));
+
+        nomDevice1.setBackground(new Color(247, 242, 208));
+        nomDevice1.setOpaque(true);
+        nomDevice1.setForeground(Color.red);
+        nomDevice1.setFont(new Font("Serif", Font.BOLD, 20));
+
+        nomDevice2.setBackground(new Color(247, 242, 208));
+        nomDevice2.setOpaque(true);
+        nomDevice2.setForeground(Color.red);
+        nomDevice2.setFont(new Font("Serif", Font.BOLD, 20));
+
         nombreVoies.setBackground(new Color(247, 242, 208));
         nombreVoies.setOpaque(true);
         nombreVoies.setForeground(Color.red);
@@ -203,45 +223,12 @@ public class Interface extends javax.swing.JFrame implements Observer {
         hexLocalisation.setForeground(Color.red);
         hexLocalisation.setFont(new Font("Serif", Font.BOLD, 20));
 
-        messageCreation.setBackground(new Color(252, 242, 3));
-        messageCreation.setOpaque(true);
-        messageCreation.setForeground(Color.red);
-        messageCreation.setFont(new Font("Serif", Font.BOLD, 20));
-
-        nomNouvelleCarte.setBackground(new Color(252, 242, 3));
-        nomNouvelleCarte.setOpaque(true);
-        nomNouvelleCarte.setForeground(Color.red);
-        nomNouvelleCarte.setFont(new Font("Serif", Font.BOLD, 20));
-
-        messageBinaireSelectionne.setBackground(new Color(252, 242, 3));
-        messageBinaireSelectionne.setOpaque(true);
-        messageBinaireSelectionne.setForeground(Color.red);
-        messageBinaireSelectionne.setFont(new Font("Serif", Font.BOLD, 20));
-
-        nombreVoiesNouvelleCarte.setBackground(new Color(252, 242, 3));
-        nombreVoiesNouvelleCarte.setOpaque(true);
-        nombreVoiesNouvelleCarte.setForeground(Color.red);
-        nombreVoiesNouvelleCarte.setFont(new Font("Serif", Font.BOLD, 20));
-
-        nouvelleMatrice.setBackground(new Color(252, 242, 3));
-        nouvelleMatrice.setOpaque(true);
-        nouvelleMatrice.setForeground(Color.red);
-        nouvelleMatrice.setFont(new Font("Serif", Font.BOLD, 20));
-
-        nouveauMicroController.setBackground(new Color(252, 242, 3));
-        nouveauMicroController.setOpaque(true);
-        nouveauMicroController.setForeground(Color.red);
-        nouveauMicroController.setFont(new Font("Serif", Font.BOLD, 20));
-
         paramsWin.getContentPane().setBackground(new Color(131, 50, 168));
         paramsWin.setSize(1300, 600);
-
-        messageCreation.setBackground(new Color(247, 242, 208));
 
         progLocLabel.setBackground(new Color(247, 242, 208));
         hexLocalisation.setOpaque(true);
 
-        messageCreation.setOpaque(true);
         progLocLabel.setOpaque(true);
         menuItemMono.setSelected(false);
         inhibBtn();
@@ -501,7 +488,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
         ligne12.supprimer();
 
         raffraichirInterface();
-       // this.getContentPane().setBackground(new Color(12, 145, 72)); // 50, 131, 16850
+        // this.getContentPane().setBackground(new Color(12, 145, 72)); // 50, 131, 16850
         //connecteur.cleanDirectory(programmerPathTempFileDirectory);
 
         if (!initialisation.getItem().equals("none")) {
@@ -563,26 +550,18 @@ public class Interface extends javax.swing.JFrame implements Observer {
         btnFermerParams = new javax.swing.JButton();
         titreLabProg = new javax.swing.JLabel();
         EnvVarBox = new javax.swing.JCheckBox();
-        labelAjoutCarte = new javax.swing.JLabel();
-        comboListeProduits = new javax.swing.JComboBox<>();
-        listeProduits = new javax.swing.JLabel();
-        btnAjouter = new javax.swing.JButton();
+        labelProduit = new javax.swing.JLabel();
         hexLocalisation = new javax.swing.JLabel();
-        nomNouvelleCarte = new javax.swing.JTextField();
         LabfichierBinaire = new javax.swing.JLabel();
-        btnSelectionBinaireAjouter = new javax.swing.JButton();
-        btnEnregistrer = new javax.swing.JButton();
-        messageBinaireSelectionne = new javax.swing.JTextField();
-        labelBinaireSelectionne = new javax.swing.JLabel();
         LabNombreVoies = new javax.swing.JLabel();
         nombreVoies = new javax.swing.JLabel();
-        LabelNbreDeVoiesNouvelleCarte = new javax.swing.JLabel();
-        nombreVoiesNouvelleCarte = new javax.swing.JTextField();
-        messageCreation = new javax.swing.JLabel();
-        LabelmicroController = new javax.swing.JLabel();
-        nouveauMicroController = new javax.swing.JTextField();
-        LabelNouvelleMatrice = new javax.swing.JLabel();
-        nouvelleMatrice = new javax.swing.JTextField();
+        LabNombreVoies1 = new javax.swing.JLabel();
+        afficheurBinaire2 = new javax.swing.JLabel();
+        afficheurProduit = new javax.swing.JLabel();
+        LabNombreVoies2 = new javax.swing.JLabel();
+        nomDevice1 = new javax.swing.JLabel();
+        LabNombreVoies3 = new javax.swing.JLabel();
+        nomDevice2 = new javax.swing.JLabel();
         aide = new javax.swing.JFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
@@ -762,8 +741,6 @@ public class Interface extends javax.swing.JFrame implements Observer {
         jMenuBar1 = new javax.swing.JMenuBar();
         menuParametres = new javax.swing.JMenu();
         menuVoir = new javax.swing.JMenuItem();
-        paramsProg = new javax.swing.JMenuItem();
-        menuCreer = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         btnFermer = new javax.swing.JMenuItem();
         menuConnexion = new javax.swing.JMenu();
@@ -813,6 +790,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
         });
 
         paramsWin.setTitle("Programmateur keypad - Paramètres système");
+        paramsWin.setMinimumSize(new java.awt.Dimension(1600, 800));
 
         titreParamsWin.setBackground(new java.awt.Color(153, 153, 255));
         titreParamsWin.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -850,78 +828,16 @@ public class Interface extends javax.swing.JFrame implements Observer {
             }
         });
 
-        labelAjoutCarte.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        labelAjoutCarte.setText("Indiquez le nom de la nouvelle carte");
-
-        comboListeProduits.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        comboListeProduits.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                comboListeProduitsItemStateChanged(evt);
-            }
-        });
-        comboListeProduits.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboListeProduitsActionPerformed(evt);
-            }
-        });
-
-        listeProduits.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        listeProduits.setText("Sélection carte");
-
-        btnAjouter.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnAjouter.setForeground(new java.awt.Color(255, 0, 0));
-        btnAjouter.setText("Ajouter");
-        btnAjouter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAjouterActionPerformed(evt);
-            }
-        });
+        labelProduit.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        labelProduit.setText("Produit");
 
         hexLocalisation.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         hexLocalisation.setForeground(new java.awt.Color(255, 0, 51));
         hexLocalisation.setText("Jlabel");
         hexLocalisation.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        nomNouvelleCarte.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        nomNouvelleCarte.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomNouvelleCarteActionPerformed(evt);
-            }
-        });
-
         LabfichierBinaire.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        LabfichierBinaire.setText("Fichier binaire");
-
-        btnSelectionBinaireAjouter.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnSelectionBinaireAjouter.setForeground(new java.awt.Color(255, 0, 0));
-        btnSelectionBinaireAjouter.setText("Sélectionner le binaire");
-        btnSelectionBinaireAjouter.setActionCommand("");
-        btnSelectionBinaireAjouter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSelectionBinaireAjouterActionPerformed(evt);
-            }
-        });
-
-        btnEnregistrer.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        btnEnregistrer.setForeground(new java.awt.Color(255, 0, 0));
-        btnEnregistrer.setText("Enregistrer");
-        btnEnregistrer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEnregistrerActionPerformed(evt);
-            }
-        });
-
-        messageBinaireSelectionne.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        messageBinaireSelectionne.setForeground(new java.awt.Color(255, 51, 0));
-        messageBinaireSelectionne.setText("A définir");
-        messageBinaireSelectionne.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                messageBinaireSelectionneActionPerformed(evt);
-            }
-        });
-
-        labelBinaireSelectionne.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        labelBinaireSelectionne.setText("Binaire sélectionné");
+        LabfichierBinaire.setText("Fichier binaire 1");
 
         LabNombreVoies.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         LabNombreVoies.setText("Nombre de voies");
@@ -931,152 +847,112 @@ public class Interface extends javax.swing.JFrame implements Observer {
         nombreVoies.setText("Jlabel");
         nombreVoies.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        LabelNbreDeVoiesNouvelleCarte.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        LabelNbreDeVoiesNouvelleCarte.setText("Nombre de voies");
+        LabNombreVoies1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        LabNombreVoies1.setText("Fichier binaire 2");
 
-        nombreVoiesNouvelleCarte.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        nombreVoiesNouvelleCarte.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreVoiesNouvelleCarteActionPerformed(evt);
-            }
-        });
+        afficheurBinaire2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        afficheurBinaire2.setForeground(new java.awt.Color(255, 0, 51));
+        afficheurBinaire2.setText("Jlabel");
+        afficheurBinaire2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        messageCreation.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        messageCreation.setForeground(new java.awt.Color(255, 0, 51));
-        messageCreation.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        messageCreation.setText("Veuillez compléter le formulaire ci-dessous");
-        messageCreation.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        afficheurProduit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        afficheurProduit.setForeground(new java.awt.Color(255, 0, 51));
+        afficheurProduit.setText("Jlabel");
+        afficheurProduit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        LabelmicroController.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        LabelmicroController.setText("Microcontrôleur");
+        LabNombreVoies2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        LabNombreVoies2.setText("Device 1");
 
-        nouveauMicroController.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        nouveauMicroController.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nouveauMicroControllerActionPerformed(evt);
-            }
-        });
+        nomDevice1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        nomDevice1.setForeground(new java.awt.Color(255, 0, 51));
+        nomDevice1.setText("Jlabel");
+        nomDevice1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        LabelNouvelleMatrice.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        LabelNouvelleMatrice.setText("Matrice");
+        LabNombreVoies3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        LabNombreVoies3.setText("Device 2");
 
-        nouvelleMatrice.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        nouvelleMatrice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nouvelleMatriceActionPerformed(evt);
-            }
-        });
+        nomDevice2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        nomDevice2.setForeground(new java.awt.Color(255, 0, 51));
+        nomDevice2.setText("Jlabel");
+        nomDevice2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout paramsWinLayout = new javax.swing.GroupLayout(paramsWin.getContentPane());
         paramsWin.getContentPane().setLayout(paramsWinLayout);
         paramsWinLayout.setHorizontalGroup(
             paramsWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paramsWinLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(paramsWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(paramsWinLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(labelBinaireSelectionne, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(paramsWinLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(paramsWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(nouvelleMatrice, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(messageCreation, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(paramsWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(paramsWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(nombreVoies, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(progLocLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, paramsWinLayout.createSequentialGroup()
-                                        .addGap(8, 8, 8)
-                                        .addGroup(paramsWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(EnvVarBox)
-                                            .addComponent(titreLabProg, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 856, Short.MAX_VALUE)
-                                        .addComponent(btnFermerParams))
-                                    .addComponent(btnAjouter, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(LabfichierBinaire, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(hexLocalisation, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(paramsWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(paramsWinLayout.createSequentialGroup()
+                                .addGap(482, 482, 482)
+                                .addComponent(titreParamsWin, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(paramsWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(paramsWinLayout.createSequentialGroup()
-                                    .addGap(482, 482, 482)
-                                    .addComponent(titreParamsWin, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(listeProduits, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(LabNombreVoies, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(LabelNbreDeVoiesNouvelleCarte, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(paramsWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(nombreVoiesNouvelleCarte, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1247, Short.MAX_VALUE)
-                                    .addComponent(nouveauMicroController))
-                                .addComponent(labelAjoutCarte, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(comboListeProduits, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelmicroController, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nomNouvelleCarte, javax.swing.GroupLayout.Alignment.LEADING)))
+                                    .addGap(8, 8, 8)
+                                    .addGroup(paramsWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(EnvVarBox)
+                                        .addGroup(paramsWinLayout.createSequentialGroup()
+                                            .addComponent(titreLabProg, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnFermerParams))))
+                                .addComponent(progLocLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 1509, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(paramsWinLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(LabelNouvelleMatrice, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(paramsWinLayout.createSequentialGroup()
-                        .addGap(465, 465, 465)
-                        .addComponent(btnSelectionBinaireAjouter, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(paramsWinLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(messageBinaireSelectionne, javax.swing.GroupLayout.PREFERRED_SIZE, 1247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(paramsWinLayout.createSequentialGroup()
-                        .addGap(468, 468, 468)
-                        .addComponent(btnEnregistrer, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(329, Short.MAX_VALUE))
+                        .addGroup(paramsWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(nomDevice2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1509, Short.MAX_VALUE)
+                            .addComponent(nomDevice1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(afficheurBinaire2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LabNombreVoies1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabNombreVoies, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nombreVoies, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(hexLocalisation, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LabfichierBinaire, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(afficheurProduit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelProduit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabNombreVoies2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabNombreVoies3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         paramsWinLayout.setVerticalGroup(
             paramsWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paramsWinLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(titreParamsWin)
-                .addGap(18, 18, 18)
-                .addGroup(paramsWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnFermerParams)
-                    .addGroup(paramsWinLayout.createSequentialGroup()
-                        .addComponent(titreLabProg)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(EnvVarBox)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paramsWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(titreLabProg)
+                    .addComponent(btnFermerParams))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(EnvVarBox)
                 .addGap(18, 18, 18)
                 .addComponent(progLocLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addComponent(labelProduit)
                 .addGap(18, 18, 18)
-                .addComponent(listeProduits)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(comboListeProduits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(afficheurProduit, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(LabfichierBinaire)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(hexLocalisation, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addComponent(LabNombreVoies1)
+                .addGap(18, 18, 18)
+                .addComponent(afficheurBinaire2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(LabNombreVoies)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(nombreVoies, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAjouter)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(messageCreation)
                 .addGap(18, 18, 18)
-                .addComponent(labelAjoutCarte)
-                .addGap(18, 18, 18)
-                .addComponent(nomNouvelleCarte, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LabelNbreDeVoiesNouvelleCarte)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nombreVoiesNouvelleCarte, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LabelmicroController)
+                .addComponent(LabNombreVoies2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nouveauMicroController, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomDevice1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LabelNouvelleMatrice)
+                .addComponent(LabNombreVoies3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nouvelleMatrice, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSelectionBinaireAjouter)
-                .addGap(3, 3, 3)
-                .addComponent(labelBinaireSelectionne)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(messageBinaireSelectionne, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(btnEnregistrer)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(nomDevice2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         aide.setTitle("Programmateur keypad - Aide");
@@ -1655,22 +1531,6 @@ public class Interface extends javax.swing.JFrame implements Observer {
             }
         });
         menuParametres.add(menuVoir);
-
-        paramsProg.setText("Programmateur");
-        paramsProg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                paramsProgActionPerformed(evt);
-            }
-        });
-        menuParametres.add(paramsProg);
-
-        menuCreer.setText("Créer");
-        menuCreer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuCreerActionPerformed(evt);
-            }
-        });
-        menuParametres.add(menuCreer);
         menuParametres.add(jSeparator1);
 
         btnFermer.setText("Fermer");
@@ -2449,33 +2309,11 @@ public class Interface extends javax.swing.JFrame implements Observer {
         System.exit(0);
     }//GEN-LAST:event_btnFermerActionPerformed
 
-    private void paramsProgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paramsProgActionPerformed
-
-        programmerLoc.showOpenDialog(this);
-        programmerLocation = programmerLoc.getSelectedFile();
-        if (programmerLoc.getSelectedFile() != null) {
-
-            console.setText("Repertoire programmateur: " + programmerLocation.getPath());
-            //System.out.println("Repertoire programmateur: " + programmerLocation.getPath());
-            programmerPathParamsProperties = programmerLocation.getPath();
-            initializer.update("programmerDirectory", programmerPathParamsProperties);
-
-        }
-
-        testParamsProg();
-    }//GEN-LAST:event_paramsProgActionPerformed
-
     private void menuVoirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuVoirActionPerformed
 
         paramsWin.setVisible(true);
         activerFonctionAjouter(false);
         EnvVarBox.setSelected(envVariable);
-
-        if (comboListeProduits.getSelectedIndex() == 0) {
-
-            hexLocalisation.setText("Aucun produit sélectionné.");
-
-        }
 
         if (programmerPathParamsProperties != null || !programmerPathParamsProperties.equals("na")) {
 
@@ -2608,146 +2446,35 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
     }//GEN-LAST:event_btnACQActionPerformed
 
-    private void nombreVoiesNouvelleCarteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreVoiesNouvelleCarteActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        aide.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nombreVoiesNouvelleCarteActionPerformed
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void messageBinaireSelectionneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messageBinaireSelectionneActionPerformed
+    private void menuPortStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_menuPortStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_messageBinaireSelectionneActionPerformed
+    }//GEN-LAST:event_menuPortStateChanged
 
-    private void btnEnregistrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnregistrerActionPerformed
-
-        if (nomNouvelleCarte.getText().equals("")) {
-
-            messageCreation.setText("Le nom de la nouvelle carte doit être défini!");
-            montrerError("Le nom de la nouvelle carte doit être défini", "Formulaire imcomplet");
-
-            return;
-        } else {
-
-            nomNouveauBinaire = nomNouvelleCarte.getText();
-        }
-
-        if (localisationNouveauBinaire == null) {
-
-            messageCreation.setText("Indiquer l'accès au bianire");
-            montrerError("L'accès au binaire doit être défini", "Formulaire imcomplet");
-            return;
-        }
-
-        if (nombreVoiesNouvelleCarte.getText().equals("")) {
-
-            montrerError("Le nombre de voies doit être défini!", "Formulaire imcomplet");
-            return;
-        } else {
-
-            try {
-
-                nombreDeVoiesNouvelleCarte = nombreVoiesNouvelleCarte.getText();
-                intNombreDeVoiesNouvelleCarte = Integer.parseInt(nombreDeVoiesNouvelleCarte);
-
-            } catch (Exception e) {
-
-                //System.out.println("Exception nombre de voie: " + nombreDeVoiesNouvelleCarte);
-                montrerError("Le nombre de voies doit être compris entre 1 et " + limCommutateur, "Formulaire imcomplet");
-                return;
-
-            }
-
-        }
-
-        if (nouveauMicroController.getText().equals("")) {
-
-            messageCreation.setText("Le nom du mirocontrôleur doit être défini!");
-            montrerError("Le nom du mirocontrôleur doit être défini!", "Formulaire imcomplet");
-
-            return;
-        } else {
-
-            nouveauDevice = nouveauMicroController.getText();
-        }
-
-        if (nouvelleMatrice.getText().equals("")) {
-
-            messageCreation.setText("La matrice doit être définie!");
-            montrerError("La nouvelle matrice doit être définie", "Formulaire imcomplet");
-            return;
-        } else {
-
-            verifierNouvelleMatrice(nouvelleMatrice.getText(), intNombreDeVoiesNouvelleCarte);
-
-        }
-
-        matriceNouveauPanneau = nouvelleMatrice.getText();
-        enregistrerNouvelleCarte(localisationNouveauBinaire, nomNouveauBinaire, nombreDeVoiesNouvelleCarte, nouveauDevice, matriceNouveauPanneau);
-
-        montrerError(
-                "La nouvelle carte à été enregistrée", "Enregistrement effectué");
-
-        paramsWin.setVisible(
-                false);
-
-    }//GEN-LAST:event_btnEnregistrerActionPerformed
-
-    private void btnSelectionBinaireAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectionBinaireAjouterActionPerformed
-
-        programmerLoc.showOpenDialog(this);
-        nouveauBinaire = programmerLoc.getSelectedFile();
-        if (programmerLoc.getSelectedFile() != null) {
-
-            console.setText("Repertoire binaire: " + nouveauBinaire.getPath());
-            localisationNouveauBinaire = nouveauBinaire.getPath();
-            //System.out.println("Binaire sélectionné: " + localisationNouveauBinaire);
-            messageBinaireSelectionne.setText("Binaire sélectionné: " + localisationNouveauBinaire);
-
-        } else {
-
-            //System.out.println("Aucun binaire sélectionné!");
-        }
-
-        //testParamsProg();
-    }//GEN-LAST:event_btnSelectionBinaireAjouterActionPerformed
-
-    private void nomNouvelleCarteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomNouvelleCarteActionPerformed
+    private void menuItemMonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemMonoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nomNouvelleCarteActionPerformed
+    }//GEN-LAST:event_menuItemMonoActionPerformed
 
-    private void btnAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterActionPerformed
+    private void menuItemMonoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_menuItemMonoStateChanged
 
-        activerFonctionAjouter(true);
-    }//GEN-LAST:event_btnAjouterActionPerformed
-
-    private void comboListeProduitsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboListeProduitsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboListeProduitsActionPerformed
-
-    private void comboListeProduitsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboListeProduitsItemStateChanged
-        System.out.println("item selected: " + comboListeProduits.getSelectedIndex());
-        if (comboListeProduits.getSelectedIndex() != 0) {
-
-            System.out.println("produit sélectionné: " + comboListeProduits.getSelectedIndex());
-            hexLocalisation.setText(ListeBinairesEnregistres.get(comboListeProduits.getSelectedIndex() - 1));
-            nombreVoies.setText(listesVoies.get(comboListeProduits.getSelectedIndex() - 1));
-            nombreDeVoiesCarteEnTest = listesVoies.get(comboListeProduits.getSelectedIndex() - 1);
-            deviceEnTest1 = listeDevicesEnregistres.get(comboListeProduits.getSelectedIndex() - 1);
-            matriceAprogrammer = listesMatrices.get(comboListeProduits.getSelectedIndex() - 1);
-            extraireLignesColonnes(matriceAprogrammer);
-
+        mono = menuItemMono.isSelected();
+        if (mono) {
+            this.getContentPane().setBackground(new Color(140, 3, 252));
+            console.setText("Programmation unitaire activée sur l'emplacement " + monoLocation);
         } else {
-
-            System.out.println("produit non sélectionné");
-            hexLocalisation.setText("Aucun produit sélectionné!");
-            nombreVoies.setText("");
-            nombreDeVoiesCarteEnTest = null;
-            deviceEnTest1 = null;
-            produitAprogrammer = null;
-            matriceAprogrammer = null;
-
-            testParamsProg();
+            this.getContentPane().setBackground(new Color(50, 131, 168));
         }
+        raffraichirInterface();
 
-    }//GEN-LAST:event_comboListeProduitsItemStateChanged
+    }//GEN-LAST:event_menuItemMonoStateChanged
 
     private void EnvVarBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnvVarBoxActionPerformed
         // TODO add your handling code here:
@@ -2780,7 +2507,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
             envVariable = false;
         }
 
-        selectedProduct = comboListeProduits.getSelectedIndex();
+        selectedProduct = 1;
 
         if (selectedProduct != 0) {
 
@@ -2808,60 +2535,7 @@ public class Interface extends javax.swing.JFrame implements Observer {
         raffraichirImagePanneau();
 
         initInterface();
-
     }//GEN-LAST:event_btnFermerParamsActionPerformed
-
-    private void nouveauMicroControllerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nouveauMicroControllerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nouveauMicroControllerActionPerformed
-
-    private void nouvelleMatriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nouvelleMatriceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nouvelleMatriceActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        aide.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void menuPortStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_menuPortStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menuPortStateChanged
-
-    private void menuItemMonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemMonoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menuItemMonoActionPerformed
-
-    private void menuItemMonoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_menuItemMonoStateChanged
-
-        mono = menuItemMono.isSelected();
-        if (mono) {
-            this.getContentPane().setBackground(new Color(140, 3, 252));
-            console.setText("Programmation unitaire activée sur l'emplacement " + monoLocation);
-        } else {
-            this.getContentPane().setBackground(new Color(50, 131, 168));
-        }
-        raffraichirInterface();
-
-    }//GEN-LAST:event_menuItemMonoStateChanged
-
-    private void menuCreerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCreerActionPerformed
-
-        paramsWin.setVisible(true);
-        EnvVarBox.setSelected(envVariable);
-        activerFonctionAjouter(true);
-        if (filePath != null) {
-            progLocLabel.setText("Repertoire programmateur: " + filePath);
-        } else {
-
-            progLocLabel.setText("Repertoire programmateur non défini!");
-        }
-        messageCreation.setText("Compléter le formulaire ci-dessous pour ajouter un produit à programmer!");
-    }//GEN-LAST:event_menuCreerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2916,11 +2590,13 @@ public class Interface extends javax.swing.JFrame implements Observer {
     private javax.swing.JFrame AlerteLancement;
     private javax.swing.JCheckBox EnvVarBox;
     private javax.swing.JLabel LabNombreVoies;
-    private javax.swing.JLabel LabelNbreDeVoiesNouvelleCarte;
-    private javax.swing.JLabel LabelNouvelleMatrice;
-    private javax.swing.JLabel LabelmicroController;
+    private javax.swing.JLabel LabNombreVoies1;
+    private javax.swing.JLabel LabNombreVoies2;
+    private javax.swing.JLabel LabNombreVoies3;
     private javax.swing.JLabel LabfichierBinaire;
     private javax.swing.JLabel StatutRS232Lab;
+    private javax.swing.JLabel afficheurBinaire2;
+    private javax.swing.JLabel afficheurProduit;
     private javax.swing.JFrame aide;
     private javax.swing.JRadioButtonMenuItem baud115200;
     private javax.swing.JRadioButtonMenuItem baud19200;
@@ -2932,18 +2608,14 @@ public class Interface extends javax.swing.JFrame implements Observer {
     private javax.swing.JRadioButtonMenuItem bits8;
     private javax.swing.JRadioButtonMenuItem bits9;
     private javax.swing.JButton btnACQ;
-    private javax.swing.JButton btnAjouter;
     private javax.swing.JMenuItem btnConnexion;
     private javax.swing.JMenuItem btnDeconnexion;
     private javax.swing.JButton btnEffacer;
-    private javax.swing.JButton btnEnregistrer;
     private javax.swing.JMenuItem btnFermer;
     private javax.swing.JButton btnFermerParams;
     private javax.swing.JButton btnProg;
     private javax.swing.JButton btnSelectBinaryLoc;
     private javax.swing.JButton btnSelectLocationProg;
-    private javax.swing.JButton btnSelectionBinaireAjouter;
-    private javax.swing.JComboBox<String> comboListeProduits;
     private javax.swing.JLabel console;
     private javax.swing.JLabel emplacementBinaire;
     private javax.swing.ButtonGroup groupBaud;
@@ -2973,29 +2645,21 @@ public class Interface extends javax.swing.JFrame implements Observer {
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JLabel labelAjoutCarte;
-    private javax.swing.JLabel labelBinaireSelectionne;
-    private javax.swing.JLabel listeProduits;
+    private javax.swing.JLabel labelProduit;
     private javax.swing.JMenu menuAide;
     private javax.swing.JMenu menuBaud;
     private javax.swing.JMenu menuBits;
     private javax.swing.JMenu menuConnexion;
-    private javax.swing.JMenuItem menuCreer;
     private javax.swing.JCheckBoxMenuItem menuItemMono;
     private javax.swing.JMenu menuParametres;
     private javax.swing.JMenu menuParity;
     private javax.swing.JMenu menuPort;
     private javax.swing.JMenu menuStop;
     private javax.swing.JMenuItem menuVoir;
-    private javax.swing.JTextField messageBinaireSelectionne;
-    private javax.swing.JLabel messageCreation;
-    private javax.swing.JTextField nomNouvelleCarte;
+    private javax.swing.JLabel nomDevice1;
+    private javax.swing.JLabel nomDevice2;
     private javax.swing.JLabel nomProduit;
     private javax.swing.JLabel nombreVoies;
-    private javax.swing.JTextField nombreVoiesNouvelleCarte;
-    private javax.swing.JTextField nouveauMicroController;
-    private javax.swing.JTextField nouvelleMatrice;
-    private javax.swing.JMenuItem paramsProg;
     private javax.swing.JFrame paramsWin;
     private javax.swing.JRadioButtonMenuItem parityEven;
     private javax.swing.JRadioButtonMenuItem parityNone;
@@ -3709,23 +3373,6 @@ public class Interface extends javax.swing.JFrame implements Observer {
             paramsWin.setSize(1300, 600);
         }
 
-        btnAjouter.setVisible(!active);
-        messageCreation.setVisible(active);
-        labelAjoutCarte.setVisible(active);
-        nomNouvelleCarte.setVisible(active);
-        LabelNbreDeVoiesNouvelleCarte.setVisible(active);
-        nombreVoiesNouvelleCarte.setVisible(active);
-        btnSelectionBinaireAjouter.setVisible(active);
-        btnEnregistrer.setVisible(active);
-        messageBinaireSelectionne.setVisible(active);
-        labelBinaireSelectionne.setVisible(active);
-        LabelmicroController.setVisible(active);
-        nouveauMicroController.setVisible(active);
-        LabelNouvelleMatrice.setVisible(active);
-        nouvelleMatrice.setVisible(active);
-        if (active) {
-            messageCreation.setText("Compléter le formulaire ci-dessous");
-        }
     }
 
     private ArrayList<String> extraireProduits(String listeProduits) {
@@ -3818,18 +3465,11 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
     private void enregistrerNouvelleCarte(String localisationNouveauBinaire, String nomNouveauBinaire, String nombreDeVoiesNouvelleCarte, String nouveauDevice1, String matriceNouveauPanneau) {
 
-        comboListeProduits.addItem(nomNouveauBinaire);
         ListeBinairesEnregistres.add(localisationNouveauBinaire);
         listesProduits.add(nomNouveauBinaire);
         listesVoies.add(nombreDeVoiesNouvelleCarte);
         listeDevicesEnregistres.add(nouveauDevice1);
         listesMatrices.add(matriceNouveauPanneau);
-
-        nomNouvelleCarte.setText("");
-        messageBinaireSelectionne.setText("");
-        nouveauMicroController.setText("");
-        nombreVoiesNouvelleCarte.setText("");
-        nouvelleMatrice.setText("");
 
         initialisation.setBinaryLocations1(initialisation.getBinaryLocations1() + ";" + localisationNouveauBinaire);
         initialisation.setProductNames(initialisation.getProductNames() + ";" + nomNouveauBinaire);
@@ -3952,14 +3592,8 @@ public class Interface extends javax.swing.JFrame implements Observer {
             listeProduitsConnusParamsProperties = initialisation.getProductNames();
             //produits = extraireProduits(listeProduitsConnus);
             listesProduits = extraireProduits(listeProduitsConnusParamsProperties);
+            produitAprogrammer = initialisation.getProductNames();
             //comboListeProduits.addItem("---");
-            for (int i = 0; i < listesProduits.size(); i++) {
-
-                //comboListeProduits.addItem(produits[i]);
-                comboListeProduits.addItem(listesProduits.get(i));
-                produitAprogrammer = initialisation.getProductNames();
-                System.out.println("commutateur.Interface.initialisationParams()- nom du produit: " + produitAprogrammer);
-            }
 
         }
 
@@ -4049,12 +3683,6 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
         }
 
-        String testString = "bonjour Michel";
-        String mot = "Michel";
-        if (testString.contains(mot)) {
-
-            System.out.println("Test contains = ok");
-        }
         // Recherche des matrices
         if (initialisation.getMatrice().equals("na")) {
 
@@ -4084,18 +3712,21 @@ public class Interface extends javax.swing.JFrame implements Observer {
         }
 
         nomProduit.setText(produitAprogrammer + " - Voies: " + nombreDeVoiesCarteEnTest + " - Matrice: " + matriceAprogrammer);
-        emplacementBinaire.setText("Binaires:  A définir!");
+        emplacementBinaire.setText(deviceEnTest1 + "-" + deviceEnTest2);
         boolean env = connecteur.executePowershellCommand(".\\logs\\env.txt", "Commander --version | Out-File -FilePath .\\logs\\env.txt -Encoding utf8", "Simplicity Commander ");
-        if(env){
-        
-            
-        }else{
-        
-            montrerError("Programmateur non localisé.\nMettre le programmateur dans le PATH", mot);
+        if (env) {
+
+            envVariable = true;
+            EnvVarBox.setSelected(true);
+
+        } else {
+
+            montrerError("Programmateur non localisé.\nMettre le programmateur dans le PATH", "Variable d'environnement");
             System.exit(0);
         }
-        
-        
+
+        initialiseParamsWindow();
+
     }
 
     private void raffraichirInterface() {
@@ -4464,6 +4095,17 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
         testParamsProg();
         raffraichirImagePanneau();
+
+    }
+
+    private void initialiseParamsWindow() {
+
+        afficheurBinaire2.setText(hexLocation2ParamsProperties);
+        afficheurProduit.setText(produitAprogrammer);
+        hexLocalisation.setText(hexLocation1ParamsProperties);
+        nombreVoies.setText(nombreDeVoiesCarteEnTest);
+        nomDevice1.setText(deviceEnTest1);
+        nomDevice2.setText(deviceEnTest2);
 
     }
 

@@ -47,75 +47,58 @@
     <Container class="javax.swing.JFrame" name="paramsWin">
       <Properties>
         <Property name="title" type="java.lang.String" value="Programmateur keypad - Param&#xe8;tres syst&#xe8;me"/>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[1600, 800]"/>
+        </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="labelBinaireSelectionne" min="-2" pref="315" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="nouvelleMatrice" alignment="0" max="32767" attributes="0"/>
-                              <Component id="messageCreation" alignment="0" max="32767" attributes="0"/>
-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="nombreVoies" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="progLocLabel" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="EnvVarBox" min="-2" max="-2" attributes="0"/>
-                                              <Component id="titreLabProg" min="-2" pref="266" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace pref="856" max="32767" attributes="0"/>
-                                          <Component id="btnFermerParams" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="btnAjouter" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabfichierBinaire" alignment="0" min="-2" pref="266" max="-2" attributes="0"/>
-                                      <Component id="hexLocalisation" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="482" max="-2" attributes="0"/>
-                                      <Component id="titreParamsWin" min="-2" pref="322" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="listeProduits" alignment="0" min="-2" pref="266" max="-2" attributes="0"/>
-                                  <Component id="LabNombreVoies" alignment="0" min="-2" pref="266" max="-2" attributes="0"/>
-                                  <Component id="LabelNbreDeVoiesNouvelleCarte" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="nombreVoiesNouvelleCarte" alignment="0" pref="1247" max="32767" attributes="0"/>
-                                      <Component id="nouveauMicroController" alignment="1" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Component id="labelAjoutCarte" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="482" max="-2" attributes="0"/>
+                                  <Component id="titreParamsWin" min="-2" pref="322" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="comboListeProduits" alignment="0" min="-2" pref="274" max="-2" attributes="0"/>
-                              <Component id="LabelmicroController" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
-                              <Component id="nomNouvelleCarte" alignment="0" max="32767" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="EnvVarBox" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="titreLabProg" min="-2" pref="266" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="btnFermerParams" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Component id="progLocLabel" min="-2" pref="1509" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="LabelNouvelleMatrice" min="-2" pref="315" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="465" max="-2" attributes="0"/>
-                          <Component id="btnSelectionBinaireAjouter" min="-2" pref="323" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="messageBinaireSelectionne" min="-2" pref="1247" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="468" max="-2" attributes="0"/>
-                          <Component id="btnEnregistrer" min="-2" pref="321" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="nomDevice2" alignment="0" pref="1509" max="32767" attributes="0"/>
+                              <Component id="nomDevice1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="afficheurBinaire2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="LabNombreVoies1" alignment="0" min="-2" pref="266" max="-2" attributes="0"/>
+                              <Component id="LabNombreVoies" alignment="0" min="-2" pref="266" max="-2" attributes="0"/>
+                              <Component id="nombreVoies" alignment="0" max="32767" attributes="0"/>
+                              <Component id="hexLocalisation" alignment="0" max="32767" attributes="0"/>
+                              <Component id="LabfichierBinaire" alignment="0" min="-2" pref="266" max="-2" attributes="0"/>
+                              <Component id="afficheurProduit" alignment="0" max="32767" attributes="0"/>
+                              <Component id="labelProduit" alignment="0" min="-2" pref="266" max="-2" attributes="0"/>
+                              <Component id="LabNombreVoies2" alignment="0" min="-2" pref="266" max="-2" attributes="0"/>
+                              <Component id="LabNombreVoies3" alignment="0" min="-2" pref="266" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="329" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -124,58 +107,40 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="titreParamsWin" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnFermerParams" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="titreLabProg" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="EnvVarBox" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="titreLabProg" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnFermerParams" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="EnvVarBox" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="progLocLabel" min="-2" pref="32" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="labelProduit" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="listeProduits" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="comboListeProduits" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="afficheurProduit" min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="LabfichierBinaire" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="hexLocalisation" min="-2" pref="35" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="LabNombreVoies1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="afficheurBinaire2" min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="LabNombreVoies" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="nombreVoies" min="-2" pref="35" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="btnAjouter" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="messageCreation" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="labelAjoutCarte" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="nomNouvelleCarte" min="-2" pref="30" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="LabelNbreDeVoiesNouvelleCarte" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="nombreVoiesNouvelleCarte" min="-2" pref="32" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="LabelmicroController" min="-2" max="-2" attributes="0"/>
+                  <Component id="LabNombreVoies2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="nouveauMicroController" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="nomDevice1" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="LabelNouvelleMatrice" min="-2" max="-2" attributes="0"/>
+                  <Component id="LabNombreVoies3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="nouvelleMatrice" min="-2" pref="32" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnSelectionBinaireAjouter" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                  <Component id="labelBinaireSelectionne" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="messageBinaireSelectionne" min="-2" pref="36" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                  <Component id="btnEnregistrer" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="nomDevice2" min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace pref="72" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -244,52 +209,13 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EnvVarBoxActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="labelAjoutCarte">
+        <Component class="javax.swing.JLabel" name="labelProduit">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Indiquez le nom de la nouvelle carte"/>
+            <Property name="text" type="java.lang.String" value="Produit"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="comboListeProduits">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="1"/>
-            </Property>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="0"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="comboListeProduitsItemStateChanged"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboListeProduitsActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JLabel" name="listeProduits">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="16" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="S&#xe9;lection carte"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnAjouter">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Ajouter"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAjouterActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="hexLocalisation">
           <Properties>
@@ -307,73 +233,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="nomNouvelleCarte">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="1"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nomNouvelleCarteActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="LabfichierBinaire">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Fichier binaire"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnSelectionBinaireAjouter">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="S&#xe9;lectionner le binaire"/>
-            <Property name="actionCommand" type="java.lang.String" value=""/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSelectionBinaireAjouterActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnEnregistrer">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="24" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Enregistrer"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEnregistrerActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="messageBinaireSelectionne">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="33" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="A d&#xe9;finir"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="messageBinaireSelectionneActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="labelBinaireSelectionne">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="16" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Binaire s&#xe9;lectionn&#xe9;"/>
+            <Property name="text" type="java.lang.String" value="Fichier binaire 1"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="LabNombreVoies">
@@ -400,34 +265,23 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelNbreDeVoiesNouvelleCarte">
+        <Component class="javax.swing.JLabel" name="LabNombreVoies1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Nombre de voies"/>
+            <Property name="text" type="java.lang.String" value="Fichier binaire 2"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="nombreVoiesNouvelleCarte">
+        <Component class="javax.swing.JLabel" name="afficheurBinaire2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="1"/>
             </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreVoiesNouvelleCarteActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="messageCreation">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="24" style="1"/>
-            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="ff" type="rgb"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Veuillez compl&#xe9;ter le formulaire ci-dessous"/>
+            <Property name="text" type="java.lang.String" value="Jlabel"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>
@@ -435,41 +289,69 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelmicroController">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="16" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Microcontr&#xf4;leur"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="nouveauMicroController">
+        <Component class="javax.swing.JLabel" name="afficheurProduit">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="1"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="0" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Jlabel"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nouveauMicroControllerActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelNouvelleMatrice">
+        <Component class="javax.swing.JLabel" name="LabNombreVoies2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Matrice"/>
+            <Property name="text" type="java.lang.String" value="Device 1"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="nouvelleMatrice">
+        <Component class="javax.swing.JLabel" name="nomDevice1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="1"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="0" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Jlabel"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nouvelleMatriceActionPerformed"/>
-          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabNombreVoies3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="16" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Device 2"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="nomDevice2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="0" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Jlabel"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -818,22 +700,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuVoirActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="paramsProg">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Programmateur"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="paramsProgActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menuCreer">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cr&#xe9;er"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuCreerActionPerformed"/>
               </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">

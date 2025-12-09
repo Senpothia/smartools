@@ -111,7 +111,7 @@ public class ProgController {
         int counter0 = 0;
 
         int lim = 1000;
-        int lim2 = 10000;
+        int lim2 = 5000;
 
         while (!end) {
 
