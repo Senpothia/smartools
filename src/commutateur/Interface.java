@@ -82,8 +82,8 @@ public class Interface extends javax.swing.JFrame implements Observer {
     private String produitAprogrammer = null;       // produit sélectionné pour programmation via l'interface
     private String listeProduitsConnusParamsProperties = null;
 
-    private String binary1 = null;  // nom du binaire 1 lue dans params.properties
-    private String binary2 = null;  // nom du binaire 2 lue dans params.properties
+    private String nomBinaire1 = null;  // nom du binaire 1 lue dans params.properties
+    private String nomBinaire2 = null;  // nom du binaire 2 lue dans params.properties
 
     private boolean confirmationParams = false;
 
@@ -3550,6 +3550,28 @@ public class Interface extends javax.swing.JFrame implements Observer {
             autoConnexion = false;
         }
 
+        // Recherche nom du binaire 1
+        if (initialisation.getBinary1().equals("na")) {
+
+            System.out.println("nom du binaire1 non défini!");
+
+        } else {
+
+            nomBinaire1 = initialisation.getBinary1();
+            System.out.println("nom du binaire1 = " + initialisation.getBinary1());
+        }
+
+        // Recherche nom du binaire 2
+        if (initialisation.getBinary2().equals("na")) {
+
+            System.out.println("nom du binaire2 non défini!");
+
+        } else {
+
+            nomBinaire2 = initialisation.getBinary2();
+            System.out.println("nom du binaire2 = " + initialisation.getBinary2());
+        }
+
         //Recherche nombre de voie du commutateur
         if (initialisation.getCommutateur().equals("na")) {
 
@@ -3580,28 +3602,6 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
             System.out.println("BinaryLocation2 = " + initialisation.getBinaryLocations2());
             hexLocation2ParamsProperties = initialisation.getBinaryLocations2();
-
-        }
-
-        // Recherche du nom binaire 1 du microcontrôleur1
-        if (initialisation.getBinary1().equals("na")) {
-
-            System.out.println("binary1 = " + initialisation.getBinary1());
-        } else {
-
-            System.out.println("Binary1 = " + initialisation.getBinary1());
-            binary1 = initialisation.getBinary1();
-
-        }
-
-        // Recherche du nom binaire 2 du microcontrôleur2
-        if (initialisation.getBinary2().equals("na")) {
-
-            System.out.println("binary2 = " + initialisation.getBinary2());
-        } else {
-
-            System.out.println("Binary2 = " + initialisation.getBinary2());
-            binary2 = initialisation.getBinary2();
 
         }
 
@@ -4063,30 +4063,6 @@ public class Interface extends javax.swing.JFrame implements Observer {
 
     private void initInterface() {
 
-        /*
-        if (EnvVarBox.isSelected()) {
-
-            envVariable = true;
-
-        } else {
-
-            envVariable = false;
-        }
-         */
- /*
-        if (initialisation.getItem().equals("none")) {
-
-            selectedProduct = comboListeProduits.getSelectedIndex();
-            System.out.println("keypadprogrammer.Interface.initInterface() -  valeur none");
-        } else {
-
-            System.out.println("keypadprogrammer.Interface.initInterface() -  valeur differente de none");
-            selectedProduct = Integer.parseInt(initialisation.getItem());;
-
-        }
-        
-        System.out.println("keypadprogrammer.Interface.initInterface() - valeur selectedProduct:" + selectedProduct);
-         */
         if (selectedProduct != 0) {
 
             System.out.println("test selectedProduct != 0");

@@ -45,7 +45,7 @@ public class Initializer {
         String binary1 = progProperpies.getProperty("binary1");
         String binary2 = progProperpies.getProperty("binary2");
 
-        Initialisation init = new Initialisation(programmerDirectory, varEnv, binaryLocations1, binaryLocations2, single, single, item, item, productNames, voies, commutateur, device1, device2, adresses1, adresses2, programmer, matrice, autoConnection, item, cycles, timing, single);
+        Initialisation init = new Initialisation(programmerDirectory, varEnv, binaryLocations1, binaryLocations2, item, item, productNames, voies, commutateur, device1, device2, adresses1, adresses2, programmer, matrice, autoConnection, item, cycles, timing, single, binary1, binary2);
         return init;
     }
 
